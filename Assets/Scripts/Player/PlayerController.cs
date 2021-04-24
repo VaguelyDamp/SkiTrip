@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 moveVec = new Vector3(0,0,0);
 
-    public delegate void SteerEvent();
+    public delegate void SteerEvent(float steerInputValue);
 
     //OnSteer is automatically a thing because we have 
     //an action called "steer" in the input map thing
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     public event SteerEvent Steer;
     void OnSteer(InputValue value)
     {
-        Steer?.Invoke();
+        Steer?.Invoke(value.Get<float>());
         horizantalInput = value.Get<float>();
     }
 
