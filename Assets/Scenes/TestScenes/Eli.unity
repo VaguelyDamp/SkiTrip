@@ -473,6 +473,7 @@ GameObject:
   - component: {fileID: 1217020678}
   - component: {fileID: 1217020677}
   - component: {fileID: 1217020676}
+  - component: {fileID: 1217020680}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -575,3 +576,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217020674}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1217020680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217020674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92df27d8768fcef479f121d6d436ef28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 1217020676}
+  speed: 5
