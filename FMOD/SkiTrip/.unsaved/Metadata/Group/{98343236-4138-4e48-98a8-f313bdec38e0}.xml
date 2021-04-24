@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{98343236-4138-4e48-98a8-f313bdec38e0}">
+		<property name="name">
+			<value>Skiing</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{18e8bdf4-c28d-4503-afe6-bb8c2e0d6eee}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{db5c5e3b-cf39-418f-955a-997388fc4e1b}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{11ff3871-ad66-4116-a16c-dfee33cacc81}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{18e8bdf4-c28d-4503-afe6-bb8c2e0d6eee}">
+		<relationship name="effects">
+			<destination>{db3ba162-aff3-4abc-87b4-a38887288560}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{db5c5e3b-cf39-418f-955a-997388fc4e1b}" />
+	<object class="MixerBusFader" id="{db3ba162-aff3-4abc-87b4-a38887288560}" />
+</objects>

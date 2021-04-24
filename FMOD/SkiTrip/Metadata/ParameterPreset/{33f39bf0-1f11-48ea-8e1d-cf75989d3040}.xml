@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{33f39bf0-1f11-48ea-8e1d-cf75989d3040}">
+		<property name="name">
+			<value>SteeringInput</value>
+		</property>
+		<relationship name="folder">
+			<destination>{05c97fbe-f25a-4efb-8251-7b26ac66c0c0}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{de1abdcc-79e5-4aab-ac8c-eea09ce6f513}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{de1abdcc-79e5-4aab-ac8c-eea09ce6f513}">
+		<property name="minimum">
+			<value>-1</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
