@@ -14,9 +14,12 @@ public class PlayerController : MonoBehaviour
     private float horizantalInput;
     private float horiMove = 0;
 
+    public bool move = true;
+
     private Vector3 moveVec = new Vector3(0,0,0);
 
     public delegate void SteerEvent(float steerInputValue);
+    public delegate void LoadCheckpointEvent(int checkpoint);
 
     //OnSteer is automatically a thing because we have 
     //an action called "steer" in the input map thing
@@ -32,9 +35,53 @@ public class PlayerController : MonoBehaviour
         horizantalInput = value.Get<float>();
     }
 
+    //These are all dev hacks which is why bad code
+    void OnCheckpoint1 (InputValue value)
+    {
+        OnLoadCheckpoint(1);
+    }
+    void OnCheckpoint2 (InputValue value)
+    {
+        OnLoadCheckpoint(2);
+    }
+    void OnCheckpoint3 (InputValue value)
+    {
+        OnLoadCheckpoint(3);
+    }
+    void OnCheckpoint4 (InputValue value)
+    {
+        OnLoadCheckpoint(4);
+    }
+    void OnCheckpoint5 (InputValue value)
+    {
+        OnLoadCheckpoint(5);
+    }
+    void OnCheckpoint6 (InputValue value)
+    {
+        OnLoadCheckpoint(6);
+    }
+    void OnCheckpoint7 (InputValue value)
+    {
+        OnLoadCheckpoint(7);
+    }
+    //end of bad dev hacks for now
+
+    public event LoadCheckpointEvent LoadCheckpoint;
+    void OnLoadCheckpoint (int checkpoint)
+    {
+        LoadCheckpoint?.Invoke(checkpoint);
+    }
+
     private void Update()
     {
-        Move();
+        if (move) 
+        {
+            Move();
+        }
+        else
+        {
+
+        };
     }
 
     private void Move()
