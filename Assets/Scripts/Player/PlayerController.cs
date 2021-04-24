@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
     public float speed = 5;
+    private float hi;
 
     private float horizantalInput;
 
@@ -24,6 +25,9 @@ public class PlayerController : MonoBehaviour
     public event SteerEvent Steer;
     void OnSteer(InputValue value)
     {
+        //hi = value.Get<float>();
+        //Debug.Log(hi);
+        Debug.Log("poop");
         Steer?.Invoke();
         horizantalInput = value.Get<float>();
     }
@@ -47,4 +51,10 @@ public class PlayerController : MonoBehaviour
     {
 
     }
+
+    void Update ()
+    {
+        //Debug.Log(hi);
+    }
+
 }
