@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD/SkiTrip/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637548600481543100
+  lastModified: 637548699815297385
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
   Path: FMOD/SkiTrip/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637548600481553083
+  lastModified: 637548699815307400
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -83,7 +83,7 @@ MonoBehaviour:
   - {fileID: -8902370354552564419}
   StringsBanks:
   - {fileID: -6474669490079186152}
-  stringsBankWriteTime: 637548600481553083
+  stringsBankWriteTime: 637548699815307400
   cacheVersion: 6
 --- !u!114 &1269141787160974293
 MonoBehaviour:
