@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
     public float speed = 5;
+    private float hi;
 
     public delegate void SteerEvent();
 
@@ -20,12 +21,21 @@ public class PlayerController : MonoBehaviour
     public event SteerEvent Steer;
     void OnSteer(InputValue value)
     {
+        //hi = value.Get<float>();
+        //Debug.Log(hi);
+        Debug.Log("poop");
         Steer?.Invoke();
-        Move(value);
+        //Move(value);
     }
 
     private void Move(InputValue value)
     {
-       Debug.Log(value.Get<float>());
+       //Debug.Log(value.Get<float>());
     }
+
+    void Update ()
+    {
+        //Debug.Log(hi);
+    }
+
 }
