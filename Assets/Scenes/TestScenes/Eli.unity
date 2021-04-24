@@ -175,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6379c32753b57cb428af2fc651ef3da8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -271,7 +271,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 58f73908c8f4eaf40a4c20010bc70b45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -665,6 +665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 407398934755064453, guid: fbd9652f14f8c0246bd4893bc31c7d8f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6379c32753b57cb428af2fc651ef3da8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbd9652f14f8c0246bd4893bc31c7d8f, type: 3}
 --- !u!1001 &2263390259130916322
@@ -795,6 +799,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.1967669
       objectReference: {fileID: 0}
+    - target: {fileID: 2958302134797296624, guid: d733f4df20d63374ca5716927c92ce5e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fec55147c59be8f43be6e279d65c8da2, type: 2}
     - target: {fileID: 2958302134797296630, guid: d733f4df20d63374ca5716927c92ce5e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.0000026
@@ -811,6 +819,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.0000026
       objectReference: {fileID: 0}
+    - target: {fileID: 6648038317681981047, guid: d733f4df20d63374ca5716927c92ce5e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fec55147c59be8f43be6e279d65c8da2, type: 2}
     - target: {fileID: 7078838517789122411, guid: d733f4df20d63374ca5716927c92ce5e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3
