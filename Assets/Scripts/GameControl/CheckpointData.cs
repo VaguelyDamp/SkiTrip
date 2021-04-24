@@ -1,4 +1,6 @@
-class CheckpointData
+using UnityEngine;
+
+class CheckpointData : MonoBehaviour
 {
     public CheckpointData(int time)
     {
@@ -6,5 +8,6 @@ class CheckpointData
     }
 
     public int timelinePosition;
+    public Vector2 position;
 }
 

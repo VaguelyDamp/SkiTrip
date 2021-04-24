@@ -12,6 +12,9 @@ public class CheckpointManager : MonoBehaviour
     [FMODUnity.EventRef]
     public string startMusic;
 
+    private GameObject player;
+    private PlayerController playerController;
+
     IDictionary<int, CheckpointData> checkpoints = new Dictionary<int, CheckpointData>()
     {
         {1, new CheckpointData(9047)},
@@ -33,13 +36,33 @@ public class CheckpointManager : MonoBehaviour
 
     void Start ()
     {
+        //should change i < to be less than total number of checkpoint
+        //gates actually implemented in game
+        for (int i = 0; i < 7; i++)
+        {
+            checkpoints[i + 1].position = new Vector2(
+                GameObject.Find("Checkpoint" + (i + 1))
+                    .transform.position.y + 8f,
+                GameObject.Find("Checkpoint" + (i + 1))
+                    .transform.position.z - 8f
+            );
+        }
         songTimeline = FMODUnity.RuntimeManager.CreateInstance(startMusic);
         songTimeline.start();
+        player = GameObject.FindWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
+        playerController.LoadCheckpoint += (checkpoint) => LoadCheckpoint(checkpoint);
     }
 
     public void LoadCheckpoint (int checkpoint)
     {
+        Debug.Log("Henlo");
         currentCheckpoint = checkpoint;
+        Debug.Log(checkpoints[currentCheckpoint].position.x);
+        playerController.move = false;
+        player.transform.position = new Vector3(0f, 
+            checkpoints[currentCheckpoint].position.x, 
+            checkpoints[currentCheckpoint].position.y);
         SongTransition();
     }
 
@@ -62,6 +85,13 @@ public class CheckpointManager : MonoBehaviour
             checkpoints[currentCheckpoint]
             .timelinePosition - (int)(fadeInTime * 1000));
         StartCoroutine(FadeSong());
+        StartCoroutine(EnableControls());
+    }
+
+    private IEnumerator EnableControls ()
+    {
+        yield return new WaitForSeconds(1f);
+        playerController.move = true;
     }
 
     private IEnumerator FadeSong ()
@@ -82,12 +112,14 @@ public class CheckpointManager : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+        
     }
 
     void Update ()
     {
         int curPosition;
         songTimeline.getTimelinePosition(out curPosition);
+        if (curPosition == 8900) Debug.Log("Now");
         if (checkpoints.Count >= currentCheckpoint + 1 &&
             curPosition >= checkpoints[currentCheckpoint + 1].timelinePosition)
         {
