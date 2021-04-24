@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Path: FMOD/SkiTrip/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
@@ -30,7 +30,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/Turn
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Path: event:/Turn
   guid: 959c6e05d1f70947999694d1c40cc455
   Banks:
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/New Event/Die
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Name: Die
   Min: 0
   Max: 1
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Turn/SteeringInput
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Name: SteeringInput
   Min: -1
   Max: 1
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Path: FMOD/SkiTrip/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/Song
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Path: event:/Song
   guid: 1c4e80bbf4dbeb48aaa4d8d2dab98ce6
   Banks:
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/SkisTogether
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Path: event:/SkisTogether
   guid: b6ccf00aced13442a6a13840f195d369
   Banks:
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   EditorBanks:
   - {fileID: -6474669490079186152}
   - {fileID: -8902370354552564419}
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/FadeMusic
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Name: FadeMusic
   Min: 0
   Max: 1
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/New Event
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Path: event:/New Event
   guid: 1c4e80bbf4dbeb48aaa4d8d2dab98ce6
   Banks:
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/SkisLow
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Path: event:/SkisLow
   guid: b61dd4937ccf1840a078f2d89876632c
   Banks:
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Turn/SteeringInput
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Name: SteeringInput
   Min: -1
   Max: 1
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/SkisHigh
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Path: event:/SkisHigh
   guid: e1b7a069094a1348891a51a7f4b0b1f0
   Banks:
