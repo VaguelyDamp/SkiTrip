@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     public float speed = 5;
     private float hi;
 
+    private float horizantalInput;
+
+    private Vector3 moveVec = new Vector3(0,0,0);
+
     public delegate void SteerEvent();
 
     //OnSteer is automatically a thing because we have 
@@ -25,12 +29,35 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(hi);
         Debug.Log("poop");
         Steer?.Invoke();
+<<<<<<< HEAD
         //Move(value);
+=======
+        horizantalInput = value.Get<float>();
     }
 
-    private void Move(InputValue value)
+    private void FixedUpdate()
     {
+        Move();
+>>>>>>> c42bc4afbccf207344fbc6cc71d8aa17b5ced55d
+    }
+
+    private void Move()
+    {
+<<<<<<< HEAD
        //Debug.Log(value.Get<float>());
+=======
+        moveVec = new Vector3(horizantalInput, 0, 1);
+        //if (!characterController.isGrounded)
+        //{
+            moveVec += Physics.gravity*.2f;
+        //}
+        characterController.Move(speed * Time.deltaTime * moveVec);
+    }
+
+    private void SteerLeft(InputValue value)
+    {
+
+>>>>>>> c42bc4afbccf207344fbc6cc71d8aa17b5ced55d
     }
 
     void Update ()
