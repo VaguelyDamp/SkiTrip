@@ -6,6 +6,7 @@ using UnityEditor;
 [CustomEditor(typeof(Tree)), CanEditMultipleObjects]
 public class TreeEditor : Editor
 {
+
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
@@ -17,5 +18,14 @@ public class TreeEditor : Editor
                 thing.DropTree();
             }
         }
+
+        if (GUILayout.Button("Change Spacing"))
+        {
+            foreach (Tree thing in targets)
+            {
+                thing.ChangeSpacing();
+            }
+        }
+        
     }
 }
