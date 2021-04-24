@@ -20,11 +20,11 @@ public class GroundGenerator : MonoBehaviour
 
             for (int j = 0; j < NumTilesLeft; j++)
             {
-                Instantiate(tilePrefab, new Vector3(transform.position.x - (tileWidth / 2) + (j * tileWidth), transform.position.y, transform.position.z + (tileWidth / 2) + (i * tileWidth)), transform.rotation, this.transform);
+                Instantiate(tilePrefab, new Vector3(transform.position.x - (tileWidth) - (j * tileWidth), transform.position.y, transform.position.z + (tileWidth / 2) + (i * tileWidth)), transform.rotation, this.transform);
             }
             for (int j = 0; j < NumTilesRight; j++)
             {
-                Instantiate(tilePrefab, new Vector3(transform.position.x + (tileWidth / 2) + (j * tileWidth), transform.position.y, transform.position.z + (tileWidth / 2) + (i * tileWidth)), transform.rotation, this.transform);
+                Instantiate(tilePrefab, new Vector3(transform.position.x + (tileWidth) + (j * tileWidth), transform.position.y, transform.position.z + (tileWidth / 2) + (i * tileWidth)), transform.rotation, this.transform);
             }
         }
     }
