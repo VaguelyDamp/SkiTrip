@@ -6,14 +6,17 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
-    public float speed = 5;
-    private float hi;
+    public float horizantalSpeed = 5;
+    public float forwardSpeed = 4;
+    public float maxAccel = .5f;
+    public float gravityModifier = 0.2f;
 
     private float horizantalInput;
+    private float horiMove = 0;
 
     private Vector3 moveVec = new Vector3(0,0,0);
 
-    public delegate void SteerEvent();
+    public delegate void SteerEvent(float steerInputValue);
 
     //OnSteer is automatically a thing because we have 
     //an action called "steer" in the input map thing
@@ -25,36 +28,20 @@ public class PlayerController : MonoBehaviour
     public event SteerEvent Steer;
     void OnSteer(InputValue value)
     {
-        //hi = value.Get<float>();
-        //Debug.Log(hi);
-        Debug.Log("poop");
-        Steer?.Invoke();
+        Steer?.Invoke(value.Get<float>());
         horizantalInput = value.Get<float>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Move();
     }
 
     private void Move()
     {
-        moveVec = new Vector3(horizantalInput, 0, 1);
-        //if (!characterController.isGrounded)
-        //{
-            moveVec += Physics.gravity*.2f;
-        //}
-        characterController.Move(speed * Time.deltaTime * moveVec);
+        horiMove = Mathf.MoveTowards(horiMove, horizantalInput, maxAccel);
+        moveVec = new Vector3(horiMove*horizantalSpeed, 0, forwardSpeed);
+        moveVec += Physics.gravity*gravityModifier;
+        characterController.Move(Time.deltaTime * moveVec);
     }
-
-    private void SteerLeft(InputValue value)
-    {
-
-    }
-
-    void Update ()
-    {
-        //Debug.Log(hi);
-    }
-
 }
