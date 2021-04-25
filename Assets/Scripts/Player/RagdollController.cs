@@ -5,24 +5,21 @@ using UnityEngine;
 public class RagdollController : MonoBehaviour
 {
     public Rigidbody[] rigidbodies;
+    public bool isRagdoll;
     public bool startingState = false;
 
-    public bool Ragdoll
+    public void SetRagdoll(bool enable)
     {
-        get { return Ragdoll; }
-        set
+        isRagdoll = enable;
+        foreach(Rigidbody rb in rigidbodies)
         {
-            Ragdoll = value;
-            foreach (Rigidbody rb in rigidbodies)
-            {
-                rb.isKinematic = !value;
-                rb.detectCollisions = value;
-            }
+            rb.isKinematic = !enable;
+            rb.detectCollisions = enable;
         }
     }
 
     private void Start()
     {
-        Ragdoll = startingState;
+        SetRagdoll(startingState);
     }
 }
