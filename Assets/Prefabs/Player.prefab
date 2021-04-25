@@ -326,6 +326,9 @@ MonoBehaviour:
   speeds:
   - 12
   - 18
+  slopRotations:
+  - {x: 0.08715574, y: 0, z: 0, w: 0.9961947}
+  - {x: 0.1305262, y: 0, z: 0, w: 0.9914449}
   speedIndex: 0
   maxAccel: 0.005
   gravityModifier: 0.7
