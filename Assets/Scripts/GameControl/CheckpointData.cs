@@ -2,15 +2,13 @@ using UnityEngine;
 
 class CheckpointData : MonoBehaviour
 {
-    public CheckpointData(int time, float trackerPosition)
+    public CheckpointData(int time)
     {
         this.timelinePosition = time;
-        this.trackerPosition = trackerPosition;
     }
 
     public int timelinePosition;
     public Vector3 position;
-    public float trackerPosition;
     public Cinemachine.CinemachineVirtualCamera vcam;
 }
 
