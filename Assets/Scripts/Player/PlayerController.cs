@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     public GameObject model;
 
     public float horizantalSpeed = 5;
-    public float forwardSpeed = 4;
+    public float[] speeds;
+    private float forwardSpeed;
+    public int speedIndex;
     public float maxAccel = .5f;
     public float gravityModifier = 0.2f;
 
@@ -47,6 +49,9 @@ public class PlayerController : MonoBehaviour
         gameController.OnDeath += OnDeath;
 
         currentRotation = new Quaternion(0.1f, 0.0f, 0.0f, 1.0f);
+
+        speedIndex = 0;
+        forwardSpeed = speeds[speedIndex];
     }
 
     private void OnDeath()
@@ -165,6 +170,18 @@ public class PlayerController : MonoBehaviour
         {
 
         };
+    }
+
+    public void IncreaseSpeed()
+    {
+        speedIndex++;
+        forwardSpeed = speeds[speedIndex];
+    }
+
+    public void DecreaseSpeed()
+    {
+        speedIndex--;
+        forwardSpeed = speeds[speedIndex];
     }
 
     public void MoveToCheckPoint(Vector3 position)
