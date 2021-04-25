@@ -21,9 +21,23 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 moveVec = new Vector3(0,0,0);
 
+    private GameController gameController;
+
     public delegate void SteerEvent(float steerInputValue);
     public delegate void LoadCheckpointEvent(int checkpoint);
     public delegate void PauseEvent(bool paused);
+
+    void Start ()
+    {
+        gameController = GameObject.Find("GameController")
+            .GetComponent<GameController>();
+        gameController.OnDeath += OnDeath;
+    }
+
+    private void OnDeath()
+    {
+        move = false;
+    }
 
     //OnSteer is automatically a thing because we have 
     //an action called "steer" in the input map thing
