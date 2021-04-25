@@ -31,6 +31,6 @@ public class RagdollController : MonoBehaviour
 
     private void OnDeath()
     {
-        SetRagdoll(true);
+        //SetRagdoll(true);
     }
 }

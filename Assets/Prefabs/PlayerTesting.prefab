@@ -327,8 +327,8 @@ MonoBehaviour:
   forwardSpeed: 12
   maxAccel: 0.01
   gravityModifier: 0.7
-  maxRotationAngle: 20
-  rotateAccel: 0.1
+  maxRotationAngle: 35
+  rotateAccel: 0.35
   move: 1
   pauseMenu: {fileID: 0}
   paused: 0
