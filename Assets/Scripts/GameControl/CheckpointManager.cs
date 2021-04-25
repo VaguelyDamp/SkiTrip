@@ -177,11 +177,11 @@ public class CheckpointManager : MonoBehaviour
             Debug.Log("Current Checkpoint: " + currentCheckpoint);
         }
 
-        if (playerController.speedIndex > 1 && curPosition >= checkpoints[8].timelinePosition)
+        if (playerController.speedIndex < 1 && curPosition >= checkpoints[8].timelinePosition)
         {
             playerController.IncreaseSpeed();
         }
-        else if (playerController.speedIndex < 0 && curPosition <= checkpoints[8].timelinePosition)
+        else if (playerController.speedIndex > 0 && curPosition <= checkpoints[8].timelinePosition)
         {
             playerController.DecreaseSpeed();
         }
