@@ -5,8 +5,8 @@ using UnityEngine.Audio;
 
 public class CheckpointManager : MonoBehaviour
 {
-    public float deathTime = 3f;
-    public float fadeInTime = 1f;
+    public float deathTime = 2f;
+    public float fadeInTime = 2f;
 
     public FMOD.Studio.EventInstance songTimeline;
     [FMODUnity.EventRef]
@@ -14,6 +14,7 @@ public class CheckpointManager : MonoBehaviour
 
     private GameObject player;
     private PlayerController playerController;
+    private GameController gameController;
 
     IDictionary<int, CheckpointData> checkpoints = new Dictionary<int, CheckpointData>()
     {
@@ -44,7 +45,7 @@ public class CheckpointManager : MonoBehaviour
                 GameObject.Find("Checkpoint" + (i + 1))
                     .transform.position.y + 8f,
                 GameObject.Find("Checkpoint" + (i + 1))
-                    .transform.position.z - 8f
+                    .transform.position.z - 16f
             );
         }
         songTimeline = FMODUnity.RuntimeManager.CreateInstance(startMusic);
@@ -52,19 +53,36 @@ public class CheckpointManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
         playerController.LoadCheckpoint += (checkpoint) => LoadCheckpoint(checkpoint);
+        playerController.PauseToggle += (paused) => OnPauseToggle(paused);
+        gameController = GameObject.Find("GameController")
+            .GetComponent<GameController>();
+        gameController.OnDeath += OnDeath;
+    }
+
+    private void OnPauseToggle (bool paused)
+    {
+        songTimeline.setPaused(paused);
     }
 
     public void LoadCheckpoint (int checkpoint)
     {
-        Debug.Log("Henlo");
         currentCheckpoint = checkpoint;
-        Debug.Log(checkpoints[currentCheckpoint].position.x);
         playerController.move = false;
         player.transform.position = new Vector3(0f, 
             checkpoints[currentCheckpoint].position.x, 
             checkpoints[currentCheckpoint].position.y);
         SongTransition();
+        if (currentCheckpoint == checkpoints.Count)
+        {
+           // TriggerWin();
+        }
     }
+
+    // public event WinEvent OnWin;
+    // void TriggerWin (InputValue value)
+    // {
+    //     OnWin?.Invoke();
+    // }
 
     public void OnDeath ()
     {
@@ -76,7 +94,7 @@ public class CheckpointManager : MonoBehaviour
     {
         yield return new WaitForSeconds(deathTime);
         songTimeline.start();
-        SongTransition();
+        LoadCheckpoint(currentCheckpoint);
     }
 
     private void SongTransition ()

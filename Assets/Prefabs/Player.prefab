@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 407398934755064458}
   - component: {fileID: 407398934755064459}
   - component: {fileID: 407398934755064456}
+  - component: {fileID: 20991737}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -397,6 +398,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6eb17c2cc925b5448de14f81d3df64d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &20991737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407398934755064449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b1f93e0b0922624b85f544211f38b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnEvent: event:/Turn
+  idleEvent: event:/SkisTogether
+  turnDuration: 1
 --- !u!1 &407398934799583301
 GameObject:
   m_ObjectHideFlags: 0
