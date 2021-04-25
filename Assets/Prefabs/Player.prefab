@@ -323,7 +323,10 @@ MonoBehaviour:
   virtualCamera: {fileID: 407398933893522159}
   model: {fileID: 7510296028468404307}
   horizantalSpeed: 12
-  forwardSpeed: 12
+  speeds:
+  - 12
+  - 24
+  speedIndex: 0
   maxAccel: 0.005
   gravityModifier: 0.7
   maxRotationAngle: 20
