@@ -26,7 +26,7 @@ public class TreeGroupEditor : Editor
             }
         }
 
-        if (GUILayout.Button("Randomize Variants"))
+        /*if (GUILayout.Button("Randomize Variants"))
         {
             foreach (TreeGroup thing in targets)
             {
@@ -44,6 +44,6 @@ public class TreeGroupEditor : Editor
                     }
                 }
             }
-        }
+        }*/
     }
 }
