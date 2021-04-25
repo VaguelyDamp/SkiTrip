@@ -159,7 +159,7 @@ public class UImanager : MonoBehaviour
     void Update ()
     {
         test++;
-        /*trackerMarkerGO.GetComponent<RectTransform>()
+        trackerMarkerGO.GetComponent<RectTransform>()
             .anchoredPosition = new Vector2(
                 Remap(
                     checkpointManager.progressThroughGame,
@@ -167,7 +167,7 @@ public class UImanager : MonoBehaviour
                     1f,
                     trackerMarkerStart,
                     trackerMarkerEnd
-                ), -139.33f);*/
+                ), -139.33f);
     }
 
     public void BackOut ()
