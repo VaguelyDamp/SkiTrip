@@ -43,7 +43,7 @@ public class CheckpointManager : MonoBehaviour
         {
             checkpoints[i + 1].position = new Vector2(
                 GameObject.Find("Checkpoint" + (i + 1))
-                    .transform.position.y + 8f,
+                    .transform.position.y + 2f,
                 GameObject.Find("Checkpoint" + (i + 1))
                     .transform.position.z - 16f
             );
