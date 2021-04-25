@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class TreeMaster : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void DropAllTrees()
     {
-        
-    }
+        foreach (Transform child in transform)
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }
