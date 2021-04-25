@@ -1318,6 +1318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4684883352802153589}
+  - component: {fileID: 4413574140932548377}
   m_Layer: 0
   m_Name: SkiPerson 1
   m_TagString: Untagged
@@ -1342,6 +1343,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4413574140932548377
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5354740627447320271}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 0710b108ce4284541b7e615edfa47793, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7245449a2d27a24499f0a0f9779cbb01, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5910747762697713259
 GameObject:
   m_ObjectHideFlags: 0
