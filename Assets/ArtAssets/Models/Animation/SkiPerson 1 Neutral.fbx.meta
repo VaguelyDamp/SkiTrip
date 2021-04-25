@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: e984b4d95883e3447aecb0f7c64d6626
+guid: d318a20a72cdb5249a6a404905748497
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Right_Pose
+    second: Neutral_Pose
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -26,7 +26,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -35,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Right_Pose
+      name: Neutral_Pose
       takeName: Take 001
       internalID: 0
       firstFrame: 1

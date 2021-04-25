@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: e984b4d95883e3447aecb0f7c64d6626
+guid: 30f9bff290ae46043bf314a52e3e0573
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Right_Pose
+    second: Up_Pose
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Right_Pose
+      name: Up_Pose
       takeName: Take 001
       internalID: 0
       firstFrame: 1
@@ -101,7 +101,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []

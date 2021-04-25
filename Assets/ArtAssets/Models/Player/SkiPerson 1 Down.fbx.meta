@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: d524bd3ce1abb8c44bee5397dc6fa9fe
+guid: c5a6d026431643e4ebeca04133bcc214
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Left_Pose
+    second: Down_Pose
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Left_Pose
+      name: Down_Pose
       takeName: Take 001
       internalID: 0
       firstFrame: 1
