@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 0a94b4f0855b2db42a3124da83433e32
+guid: d09f9ac51faceac4c935f39f50bc93ef
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SnowMtl
-    second: {fileID: 2100000, guid: 798aca0d23a47614782584b3a45966eb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TreeLeafMtl
-    second: {fileID: 2100000, guid: e0541dc53ad0b8e44b65fd8c0f4c94d2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TrunkMtl
-    second: {fileID: 2100000, guid: d2231221725e81a40b3e32396270d604, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -439,7 +439,7 @@ PrefabInstance:
     - target: {fileID: 7330095381222774183, guid: 0a94b4f0855b2db42a3124da83433e32, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 164d4f80dbebdc54d8e557c600bf6016, type: 2}
+      objectReference: {fileID: 2100000, guid: 798aca0d23a47614782584b3a45966eb, type: 2}
     - target: {fileID: 7330095381222774183, guid: 0a94b4f0855b2db42a3124da83433e32, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -694,6 +694,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: abf4c265b12ca154f93b813553da03ef, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 798aca0d23a47614782584b3a45966eb, type: 2}
     - target: {fileID: 919132149155446097, guid: abf4c265b12ca154f93b813553da03ef, type: 3}
       propertyPath: m_Name
       value: SM_Floor (3)
