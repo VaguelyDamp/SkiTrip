@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 603e28177d54fbf418ee4796eae6444c
+guid: 99d1733a306806143b0dc7ffd7ff6847
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: phong3
-    second: {fileID: 2100000, guid: ffa8914bd94d4844e9c0beaa00b492f1, type: 2}
+      name: SnowMtl
+    second: {fileID: 2100000, guid: 798aca0d23a47614782584b3a45966eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 798aca0d23a47614782584b3a45966eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rockMtl
+    second: {fileID: 2100000, guid: 5cc2f1fa63ca17946b63c92d395f8d85, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
