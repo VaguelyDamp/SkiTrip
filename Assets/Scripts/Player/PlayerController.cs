@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
+    public Cinemachine.CinemachineVirtualCamera virtualCamera;
     public float horizantalSpeed = 5;
     public float forwardSpeed = 4;
     public float maxAccel = .5f;
@@ -27,6 +28,9 @@ public class PlayerController : MonoBehaviour
     public delegate void LoadCheckpointEvent(int checkpoint);
     public delegate void PauseEvent(bool paused);
 
+    private bool movingToCheckPoint = false;
+    private Vector3 checkpointMove;
+
     void Start ()
     {
         gameController = GameObject.Find("GameController")
@@ -36,7 +40,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnDeath()
     {
-        move = false;
+        characterController.enabled = false;
+        virtualCamera.enabled = false;
     }
 
     //OnSteer is automatically a thing because we have 
@@ -127,11 +132,30 @@ public class PlayerController : MonoBehaviour
         };
     }
 
+    public void MoveToCheckPoint(Vector2 position)
+    {
+        checkpointMove = new Vector3(0, position.x, position.y);
+        Debug.Log("Moving to checkpoint: " + checkpointMove);
+        movingToCheckPoint = true;
+    }
+
     private void Move()
     {
-        horiMove = Mathf.MoveTowards(horiMove, horizantalInput, maxAccel);
-        moveVec = new Vector3(horiMove*horizantalSpeed, 0, forwardSpeed);
-        moveVec += Physics.gravity*gravityModifier;
-        characterController.Move(Time.deltaTime * moveVec);
+        if (movingToCheckPoint)
+        {
+            characterController.enabled = false;
+            transform.position = checkpointMove;
+            movingToCheckPoint = false;
+            virtualCamera.enabled = true;
+            characterController.enabled = true;
+            Debug.Log("Actually applied checkpoint move");
+        }
+        else
+        {
+            horiMove = Mathf.MoveTowards(horiMove, horizantalInput, maxAccel);
+            moveVec = new Vector3(horiMove * horizantalSpeed, 0, forwardSpeed);
+            moveVec += Physics.gravity * gravityModifier;
+            characterController.Move(Time.deltaTime * moveVec);
+        }
     }
 }
