@@ -12,22 +12,29 @@ public class CheckpointManager : MonoBehaviour
     [FMODUnity.EventRef]
     public string startMusic;
 
+    public float progressThroughGame = 0f;
+    public float endOfGame = 147065f;
+
     private GameObject player;
     private PlayerController playerController;
     private GameController gameController;
+    private UImanager uiManager;
 
     IDictionary<int, CheckpointData> checkpoints = new Dictionary<int, CheckpointData>()
     {
-        {1, new CheckpointData(9047)},
-        {2, new CheckpointData(32997)},
-        {3, new CheckpointData(56999)},
-        {4, new CheckpointData(69081)},
-        {5, new CheckpointData(81059)},
-        {6, new CheckpointData(105098)},
-        {7, new CheckpointData(147065)}
+        {1, new CheckpointData(9047, 0)},
+        {2, new CheckpointData(32997, 0)},
+        {3, new CheckpointData(56999, 0)},
+        {4, new CheckpointData(69081, 0)},
+        {5, new CheckpointData(81059, 0)},
+        {6, new CheckpointData(105098, 0)},
+        {7, new CheckpointData(147065, 0)}
     };
 
     public int currentCheckpoint = 1;
+    public int phase = 1;
+    public int phase2Start = 3;
+    public int phase3Start = 6;
 
     public float Remap(float value, float fromStart, float fromEnd, float toStart, float toEnd)
     {
@@ -57,6 +64,7 @@ public class CheckpointManager : MonoBehaviour
         gameController = GameObject.Find("GameController")
             .GetComponent<GameController>();
         gameController.OnDeath += OnDeath;
+        uiManager = GameObject.Find("UI").GetComponent<UImanager>();
     }
 
     private void OnPauseToggle (bool paused)
@@ -72,6 +80,7 @@ public class CheckpointManager : MonoBehaviour
             checkpoints[currentCheckpoint].position.x, 
             checkpoints[currentCheckpoint].position.y);
         SongTransition();
+        uiManager.ChangeCheckpointMarkers(phase);
         if (currentCheckpoint == checkpoints.Count)
         {
            // TriggerWin();
@@ -135,6 +144,18 @@ public class CheckpointManager : MonoBehaviour
 
     void Update ()
     {
+        if (currentCheckpoint + 1 >= phase3Start)
+        {
+            phase = 3;
+        }
+        else if (currentCheckpoint + 1 >= phase2Start)
+        {
+            phase = 2;
+        }
+        else
+        {
+            phase = 1;
+        }
         int curPosition;
         songTimeline.getTimelinePosition(out curPosition);
         if (curPosition == 8900) Debug.Log("Now");
@@ -142,7 +163,21 @@ public class CheckpointManager : MonoBehaviour
             curPosition >= checkpoints[currentCheckpoint + 1].timelinePosition)
         {
             currentCheckpoint++;
+            uiManager.ChangeCheckpointMarkers(phase);
             Debug.Log("Current Checkpoint: " + currentCheckpoint);
         }
+        if (currentCheckpoint == 1)
+        {
+            uiManager.ChangeCheckpointMarkers(1);
+            Debug.Log("Current Checkpoint: " + currentCheckpoint);
+        }
+        float trackerProgress = Remap(
+            curPosition,
+            0f,
+            endOfGame,
+            0f,
+            1f
+        );
+        progressThroughGame = trackerProgress;
     }
 }
