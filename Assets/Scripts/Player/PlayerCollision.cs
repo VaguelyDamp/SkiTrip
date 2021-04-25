@@ -13,8 +13,10 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        //Debug.Log("Colliding with: " + col.gameObject);
-        if (col.transform.tag == "Tree")
+        Debug.Log("Colliding with: " + col.gameObject);
+        if (col.transform.tag == "Tree" || 
+            col.transform.parent.transform.tag == "Rock" ||
+            col.transform.parent.transform.parent.tag == "Prop")
         {
             gameController.Death();
         }

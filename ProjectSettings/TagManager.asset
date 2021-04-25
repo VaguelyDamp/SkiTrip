@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Tree
   - TreeGroup
+  - Rock
+  - Prop
   layers:
   - Default
   - TransparentFX
