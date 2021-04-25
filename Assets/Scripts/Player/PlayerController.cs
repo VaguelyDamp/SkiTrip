@@ -7,13 +7,19 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
+    public GameObject model;
+
     public float horizantalSpeed = 5;
     public float forwardSpeed = 4;
     public float maxAccel = .5f;
     public float gravityModifier = 0.2f;
 
+    public float maxRotationAngle = 20f;
+    public float rotateAccel = .1f;
+
     private float horizantalInput;
     private float horiMove = 0;
+    private float yRot = 0;
 
     public bool move = true;
 
@@ -31,11 +37,16 @@ public class PlayerController : MonoBehaviour
     private bool movingToCheckPoint = false;
     private Vector3 checkpointMove;
 
+    private Quaternion currentRotation;
+ 
+
     void Start ()
     {
         gameController = GameObject.Find("GameController")
             .GetComponent<GameController>();
         gameController.OnDeath += OnDeath;
+
+        currentRotation = new Quaternion(0.1f, 0.0f, 0.0f, 1.0f);
     }
 
     private void OnDeath()
@@ -145,13 +156,20 @@ public class PlayerController : MonoBehaviour
         {
             characterController.enabled = false;
             transform.position = checkpointMove;
+            transform.rotation = currentRotation;
             movingToCheckPoint = false;
             virtualCamera.enabled = true;
+            //Debug.Log("Rotation: " + transform.rotation);
             characterController.enabled = true;
-            Debug.Log("Actually applied checkpoint move");
+            //Debug.Log("Actually applied checkpoint move");
         }
         else
         {
+            yRot = Mathf.MoveTowardsAngle(yRot, horizantalInput * maxRotationAngle, rotateAccel);
+            model.transform.eulerAngles = new Vector3(model.transform.eulerAngles.x, yRot, transform.eulerAngles.z);
+
+            //transform.Rotate(transform.up, horizantalInput * maxRotationAngle * rotateAccel * Time.deltaTime);
+
             horiMove = Mathf.MoveTowards(horiMove, horizantalInput, maxAccel);
             moveVec = new Vector3(horiMove * horizantalSpeed, 0, forwardSpeed);
             moveVec += Physics.gravity * gravityModifier;
