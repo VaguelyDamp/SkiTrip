@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 6708868680001115932}
   - component: {fileID: 962030770289785063}
   m_Layer: 0
-  m_Name: TreeB
+  m_Name: TallTreeA
   m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,7 +208,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fec55147c59be8f43be6e279d65c8da2, type: 2}
+  - {fileID: 2100000, guid: 798aca0d23a47614782584b3a45966eb, type: 2}
   - {fileID: 2100000, guid: e0541dc53ad0b8e44b65fd8c0f4c94d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
