@@ -9,6 +9,11 @@ public class Tree : MonoBehaviour
     public int oldSpacing;
     public int newSpacing;
 
+    public bool randomizeRotation = true;
+    public bool randomizeVariant = true;
+
+    public GameObject[] variants;
+
     public void DropTree()
     {
         int layerMask = 1 << 6;
@@ -28,5 +33,20 @@ public class Tree : MonoBehaviour
         int spacingModifier = newSpacing / oldSpacing;
         Debug.Log("Spacing Modifier: " + spacingModifier);
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z * (spacingModifier));
+    }
+
+    public void RandomizeRotation()
+    {
+        if (randomizeRotation)
+        {
+            transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+        }
+    }
+
+    public void RandomizeVariant()
+    {
+        GameObject newTreePrefab = variants[(int)Random.Range(0, variants.Length - 1)];
+        GameObject newTreeActual = Instantiate(newTreePrefab, transform.position, transform.rotation, transform.parent);
+        Destroy(this);
     }
 }

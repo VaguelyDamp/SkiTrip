@@ -26,6 +26,26 @@ public class TreeEditor : Editor
                 thing.ChangeSpacing();
             }
         }
-        
+
+        if (GUILayout.Button("Randomize Rotation"))
+        {
+            foreach (Tree thing in targets)
+            {
+                thing.RandomizeRotation();
+            }
+        }
+
+        if (GUILayout.Button("Randomize Variant"))
+        {
+            foreach (Tree thing in targets)
+            {
+                GameObject newTreePrefab = thing.variants[(int)Random.Range(0, thing.variants.Length)];
+                object newTreeActual = PrefabUtility.InstantiatePrefab(newTreePrefab, thing.transform.parent.transform);
+                GameObject go = newTreeActual as GameObject;
+                go.transform.position = thing.transform.position;
+                go.transform.rotation = thing.transform.rotation;
+                Undo.DestroyObjectImmediate(thing.gameObject);
+            }
+        }
     }
 }
