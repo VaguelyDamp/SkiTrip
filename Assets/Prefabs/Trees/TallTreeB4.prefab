@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 900347689841663211}
   - component: {fileID: 6708868680001115932}
   - component: {fileID: 962030770289785063}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TallTreeB4
   m_TagString: Tree
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7478955521275609973}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TreeBottem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,9 +149,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6579140754669045997, guid: 5503062d7b950e64f84e38a117d7908e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -6021849675022013, guid: 5503062d7b950e64f84e38a117d7908e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5503062d7b950e64f84e38a117d7908e, type: 3}
       propertyPath: m_Name
       value: PineTreeB4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5503062d7b950e64f84e38a117d7908e, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5503062d7b950e64f84e38a117d7908e, type: 3}

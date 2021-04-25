@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1586151365098165706}
   - component: {fileID: 1586151365098165709}
   - component: {fileID: 3252231504500610094}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShortTreeA3
   m_TagString: Tree
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3082439007256056352}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TreeBottem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,6 +152,22 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 392cef278a9a56542aa334ece9ad46be, type: 3}
       propertyPath: m_Name
       value: PineTreeA3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 392cef278a9a56542aa334ece9ad46be, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1318405498409093852, guid: 392cef278a9a56542aa334ece9ad46be, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835418814168820547, guid: 392cef278a9a56542aa334ece9ad46be, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129019008686975414, guid: 392cef278a9a56542aa334ece9ad46be, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392cef278a9a56542aa334ece9ad46be, type: 3}
