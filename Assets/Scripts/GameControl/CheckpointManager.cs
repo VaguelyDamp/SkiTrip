@@ -50,8 +50,8 @@ public class CheckpointManager : MonoBehaviour
         {
             GameObject checkpointGO = GameObject.Find("Checkpoint" + (i + 1));
             checkpoints[i + 1].position = new Vector2(
-                checkpointGO.transform.position.y + 2f,
-                checkpointGO.transform.position.z - 16f
+                checkpointGO.transform.position.y + 10f,
+                checkpointGO.transform.position.z - 30f
             );
             checkpoints[i + 1].vcam = checkpointGO.GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>();
         }
