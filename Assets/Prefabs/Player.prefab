@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 407398934755064455}
+  virtualCamera: {fileID: 407398933893522159}
   horizantalSpeed: 12
   forwardSpeed: 12
   maxAccel: 0.005

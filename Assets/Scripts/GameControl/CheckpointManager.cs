@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class CheckpointManager : MonoBehaviour
 {
-    public float deathTime = 2f;
+    public float deathTime = 1f;
     public float fadeInTime = 2f;
 
     public FMOD.Studio.EventInstance songTimeline;
@@ -41,12 +41,12 @@ public class CheckpointManager : MonoBehaviour
         //gates actually implemented in game
         for (int i = 0; i < 7; i++)
         {
+            GameObject checkpointGO = GameObject.Find("Checkpoint" + (i + 1));
             checkpoints[i + 1].position = new Vector2(
-                GameObject.Find("Checkpoint" + (i + 1))
-                    .transform.position.y + 2f,
-                GameObject.Find("Checkpoint" + (i + 1))
-                    .transform.position.z - 16f
+                checkpointGO.transform.position.y + 2f,
+                checkpointGO.transform.position.z - 16f
             );
+            checkpoints[i + 1].vcam = checkpointGO.GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>();
         }
         songTimeline = FMODUnity.RuntimeManager.CreateInstance(startMusic);
         songTimeline.start();
@@ -67,10 +67,10 @@ public class CheckpointManager : MonoBehaviour
     public void LoadCheckpoint (int checkpoint)
     {
         currentCheckpoint = checkpoint;
-        playerController.move = false;
-        player.transform.position = new Vector3(0f, 
-            checkpoints[currentCheckpoint].position.x, 
-            checkpoints[currentCheckpoint].position.y);
+        //playerController.move = false;
+        
+        playerController.MoveToCheckPoint(checkpoints[currentCheckpoint].position);
+        Debug.Log("Telling player to move to checkpoint: " + checkpoints[currentCheckpoint].position);
         SongTransition();
         if (currentCheckpoint == checkpoints.Count)
         {
@@ -103,7 +103,8 @@ public class CheckpointManager : MonoBehaviour
             checkpoints[currentCheckpoint]
             .timelinePosition - (int)(fadeInTime * 1000));
         StartCoroutine(FadeSong());
-        StartCoroutine(EnableControls());
+        //StartCoroutine(EnableControls());
+        //playerController.move = true;
     }
 
     private IEnumerator EnableControls ()
@@ -141,7 +142,9 @@ public class CheckpointManager : MonoBehaviour
         if (checkpoints.Count >= currentCheckpoint + 1 &&
             curPosition >= checkpoints[currentCheckpoint + 1].timelinePosition)
         {
+            checkpoints[currentCheckpoint].vcam.enabled = false;
             currentCheckpoint++;
+            checkpoints[currentCheckpoint].vcam.enabled = true;
             Debug.Log("Current Checkpoint: " + currentCheckpoint);
         }
     }
