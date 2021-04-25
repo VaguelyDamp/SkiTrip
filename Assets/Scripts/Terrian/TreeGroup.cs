@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class TreeGroup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void DropTrees()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (Transform child in transform)
+        {
+            if (child.tag == "TreeGroup")
+            {
+                child.GetComponent<TreeGroup>().DropTrees();
+            }
+            else if (child.tag == "Tree")
+            {
+                child.GetComponent<Tree>().DropTree();
+            }
+            else
+            {
+                Debug.LogWarning("There's an imposter in: " + gameObject.name + "!!!!!!!!"); 
+            }
+        }
     }
 }

@@ -44,7 +44,7 @@ public class CheckpointManager : MonoBehaviour
                 GameObject.Find("Checkpoint" + (i + 1))
                     .transform.position.y + 8f,
                 GameObject.Find("Checkpoint" + (i + 1))
-                    .transform.position.z - 8f
+                    .transform.position.z - 16f
             );
         }
         songTimeline = FMODUnity.RuntimeManager.CreateInstance(startMusic);
