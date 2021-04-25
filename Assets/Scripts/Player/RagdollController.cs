@@ -5,6 +5,8 @@ using UnityEngine;
 public class RagdollController : MonoBehaviour
 {
     public Rigidbody[] rigidbodies;
+    public bool startingState = false;
+
     public bool Ragdoll
     {
         get { return Ragdoll; }
@@ -17,5 +19,10 @@ public class RagdollController : MonoBehaviour
                 rb.detectCollisions = value;
             }
         }
+    }
+
+    private void Start()
+    {
+        Ragdoll = startingState;
     }
 }
