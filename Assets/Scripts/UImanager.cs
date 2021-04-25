@@ -9,12 +9,35 @@ public class UImanager : MonoBehaviour
     public Text confirmationText;
     public Button confirmationButton;
 
+    public GameObject deathText;
+
+    private GameController gameController;
+
     private SceneController sceneController;
 
     void Start ()
     {
         sceneController = GameObject.Find("SceneController")
             .GetComponent<SceneController>();
+        gameController = GameObject.Find("GameController")
+            .GetComponent<GameController>();
+        gameController.OnDeath += OnDeath;
+    }
+
+    private void OnDeath ()
+    {
+        deathText.SetActive(true);
+        StartCoroutine(HideDeathText());
+    }
+
+    private IEnumerator HideDeathText ()
+    {
+        yield return new WaitForSeconds(
+            GameObject.Find("CheckpointManager")
+            .GetComponent<CheckpointManager>()
+            .deathTime
+        );
+        deathText.SetActive(false);
     }
 
     public void PromptConfirmNegative (string action)

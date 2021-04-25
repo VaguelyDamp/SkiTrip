@@ -5,8 +5,8 @@ using UnityEngine.Audio;
 
 public class CheckpointManager : MonoBehaviour
 {
-    public float deathTime = 3f;
-    public float fadeInTime = 1f;
+    public float deathTime = 2f;
+    public float fadeInTime = 2f;
 
     public FMOD.Studio.EventInstance songTimeline;
     [FMODUnity.EventRef]
@@ -14,6 +14,7 @@ public class CheckpointManager : MonoBehaviour
 
     private GameObject player;
     private PlayerController playerController;
+    private GameController gameController;
 
     IDictionary<int, CheckpointData> checkpoints = new Dictionary<int, CheckpointData>()
     {
@@ -53,6 +54,9 @@ public class CheckpointManager : MonoBehaviour
         playerController = player.GetComponent<PlayerController>();
         playerController.LoadCheckpoint += (checkpoint) => LoadCheckpoint(checkpoint);
         playerController.PauseToggle += (paused) => OnPauseToggle(paused);
+        gameController = GameObject.Find("GameController")
+            .GetComponent<GameController>();
+        gameController.OnDeath += OnDeath;
     }
 
     private void OnPauseToggle (bool paused)
@@ -80,7 +84,7 @@ public class CheckpointManager : MonoBehaviour
     {
         yield return new WaitForSeconds(deathTime);
         songTimeline.start();
-        SongTransition();
+        LoadCheckpoint(currentCheckpoint);
     }
 
     private void SongTransition ()
