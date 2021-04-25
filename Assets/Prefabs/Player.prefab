@@ -335,11 +335,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 407398934755064455}
+  virtualCamera: {fileID: 407398933893522159}
   horizantalSpeed: 12
   forwardSpeed: 12
-  maxAccel: 0.01
+  maxAccel: 0.005
   gravityModifier: 0.7
   move: 1
+  pauseMenu: {fileID: 0}
+  paused: 0
 --- !u!114 &407398934755064458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnEvent: event:/Turn
   idleEvent: event:/SkisTogether
+  deathEvent: 
   turnDuration: 1
 --- !u!1 &407398934799583301
 GameObject:

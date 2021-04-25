@@ -39,12 +39,15 @@ public class TreeEditor : Editor
         {
             foreach (Tree thing in targets)
             {
-                GameObject newTreePrefab = thing.variants[(int)Random.Range(0, thing.variants.Length)];
-                object newTreeActual = PrefabUtility.InstantiatePrefab(newTreePrefab, thing.transform.parent.transform);
-                GameObject go = newTreeActual as GameObject;
-                go.transform.position = thing.transform.position;
-                go.transform.rotation = thing.transform.rotation;
-                Undo.DestroyObjectImmediate(thing.gameObject);
+                if (thing.randomizeVariant)
+                {
+                    GameObject newTreePrefab = thing.variants[(int)Random.Range(0, thing.variants.Length)];
+                    object newTreeActual = PrefabUtility.InstantiatePrefab(newTreePrefab, thing.transform.parent.transform);
+                    GameObject go = newTreeActual as GameObject;
+                    go.transform.position = thing.transform.position;
+                    go.transform.rotation = thing.transform.rotation;
+                    Undo.DestroyObjectImmediate(thing.gameObject);
+                }
             }
         }
     }
