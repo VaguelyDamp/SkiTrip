@@ -44,7 +44,7 @@ public class CheckpointManager : MonoBehaviour
                 GameObject.Find("Checkpoint" + (i + 1))
                     .transform.position.y + 8f,
                 GameObject.Find("Checkpoint" + (i + 1))
-                    .transform.position.z - 8f
+                    .transform.position.z - 16f
             );
         }
         songTimeline = FMODUnity.RuntimeManager.CreateInstance(startMusic);
@@ -52,13 +52,17 @@ public class CheckpointManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
         playerController.LoadCheckpoint += (checkpoint) => LoadCheckpoint(checkpoint);
+        playerController.PauseToggle += (paused) => OnPauseToggle(paused);
+    }
+
+    private void OnPauseToggle (bool paused)
+    {
+        songTimeline.setPaused(paused);
     }
 
     public void LoadCheckpoint (int checkpoint)
     {
-        Debug.Log("Henlo");
         currentCheckpoint = checkpoint;
-        Debug.Log(checkpoints[currentCheckpoint].position.x);
         playerController.move = false;
         player.transform.position = new Vector3(0f, 
             checkpoints[currentCheckpoint].position.x, 
