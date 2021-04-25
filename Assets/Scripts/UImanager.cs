@@ -16,12 +16,9 @@ public class UImanager : MonoBehaviour
     private SceneController sceneController;
 
     public GameObject[] checkpointMarkers;
-    public Sprite phase1MarkerLocked;
-    public Sprite phase1MarkerCleared;
-    public Sprite[] phase2MarkersLocked;
-    public Sprite[] phase2MarkersCleared;
-    public Sprite[] phase3MarkersLocked;
-    public Sprite[] phase3MarkersCleared;
+    public Sprite phase1Marker;
+    public Sprite[] phase2Markers;
+    public Sprite[] phase3Markers;
 
     public GameObject trackerMarkerGO;
     public Image trackerMarker;
@@ -82,55 +79,26 @@ public class UImanager : MonoBehaviour
 
     public void ChangeCheckpointMarkers (int phase)
     {
+        phase = 1;
         int currentCheckpoint = checkpointManager.currentCheckpoint;
-        int i = 0;
         switch (phase)
         {
             case 1:
-                foreach (GameObject marker in checkpointMarkers)
-                {
-                    Image markerImage = marker.GetComponent<Image>();
-                    if (i < currentCheckpoint)
-                    {
-                        markerImage.sprite = phase1MarkerCleared;
-                        i++;
-                    }
-                    else
-                    {
-                        markerImage.sprite = phase1MarkerLocked;
-                    }
-                }
                 break;
             case 2:
                 foreach (GameObject marker in checkpointMarkers)
                 {
                     Image markerImage = marker.GetComponent<Image>();
-                    int rand = Random.Range(0, phase2MarkersLocked.Length);
-                    if (i < currentCheckpoint)
-                    {
-                        markerImage.sprite = phase2MarkersCleared[rand];
-                        i++;
-                    }
-                    else
-                    {
-                        markerImage.sprite = phase2MarkersLocked[rand];
-                    }
+                    int rand = Random.Range(0, phase2Markers.Length);
+                    markerImage.sprite = phase2Markers[rand];
                 }
                 break;
             case 3:
                 foreach (GameObject marker in checkpointMarkers)
                 {
                     Image markerImage = marker.GetComponent<Image>();
-                    int rand = Random.Range(0, phase3MarkersLocked.Length);
-                    if (i < currentCheckpoint)
-                    {
-                        markerImage.sprite = phase3MarkersCleared[rand];
-                        i++;
-                    }
-                    else
-                    {
-                        markerImage.sprite = phase3MarkersLocked[rand];
-                    }
+                    int rand = Random.Range(0, phase3Markers.Length);
+                    markerImage.sprite = phase3Markers[rand];
                 }
                 break;
             default:
@@ -167,7 +135,7 @@ public class UImanager : MonoBehaviour
                     1f,
                     trackerMarkerStart,
                     trackerMarkerEnd
-                ), -139.33f);
+                ), -19f);
     }
 
     public void BackOut ()

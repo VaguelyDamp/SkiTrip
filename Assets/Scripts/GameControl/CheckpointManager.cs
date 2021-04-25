@@ -176,7 +176,7 @@ public class CheckpointManager : MonoBehaviour
             uiManager.ChangeTrackerMarker(phase);
             Debug.Log("Current Checkpoint: " + currentCheckpoint);
         }
-
+        
         if (playerController.speedIndex < 1 && curPosition >= checkpoints[8].timelinePosition)
         {
             playerController.IncreaseSpeed();
