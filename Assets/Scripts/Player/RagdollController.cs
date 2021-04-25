@@ -8,6 +8,8 @@ public class RagdollController : MonoBehaviour
     public bool isRagdoll;
     public bool startingState = false;
 
+    private GameController gameController;
+
     public void SetRagdoll(bool enable)
     {
         isRagdoll = enable;
@@ -21,5 +23,14 @@ public class RagdollController : MonoBehaviour
     private void Start()
     {
         SetRagdoll(startingState);
+
+        gameController = GameObject.Find("GameController")
+            .GetComponent<GameController>();
+        gameController.OnDeath += OnDeath;
+    }
+
+    private void OnDeath()
+    {
+        SetRagdoll(true);
     }
 }
