@@ -9,13 +9,178 @@
 [LOG] DownMix::init                            : done.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000244AC70E868 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000024482FB5218 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4195744
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 11680
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000FD0676EFB8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE64E37B10
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE64E37AE0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE64E37BE0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE64E37CA0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000244DDF24F68
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='turn5', format=5, channels=2, frequency=48000, lengthbytes=13792, lengthpcm=48901, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.234070.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4195744
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 11680
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000FD0676EFB8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE64E37B10
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE64E37AE0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE64E37BE0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE64E37CA0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000244DDF24F68
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='turn2', format=5, channels=2, frequency=48000, lengthbytes=13408, lengthpcm=48901, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.504974.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4195744
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 11680
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000FD0676EFB8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE64E37B10
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE64E37AE0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE64E37BE0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE64E37CA0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000244DDF24F68
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='turn3', format=5, channels=2, frequency=48000, lengthbytes=13696, lengthpcm=48901, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.513275.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4195744
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 11680
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000FD0676EFB8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE64E37B10
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE64E37AE0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE64E37BE0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE64E37CA0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000244DDF24F68
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='turn1', format=5, channels=2, frequency=48000, lengthbytes=13632, lengthpcm=48901, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.319061.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4195744
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 11680
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000FD0676EFB8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE64E37B10
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE64E37AE0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE64E37BE0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE64E37CA0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000244DDF24F68
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='turn4', format=5, channels=2, frequency=48000, lengthbytes=13504, lengthpcm=48901, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.182709.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000244AE631098
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000244AE631098
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002441ECEA8E8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002441ECEA8E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000244AE631248
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000244AE631248
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000244AE631098
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000244AE631098
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002441ECEA8E8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002441ECEA8E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000244AE631248
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000244AE631248
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000244AE631098
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000244AE631098
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002441ECEA8E8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002441ECEA8E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000244AE631248
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000244AE631248
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000244AE631098
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000244AE631098
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002441ECEA8E8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002441ECEA8E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000244AE631248
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000244AE631248
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000244AE631098
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000244AE631098
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002441ECEA8E8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002441ECEA8E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000244AE631248
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000244AE631248
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SoundI::release                          : skisHigh (000002441A306078)
+[LOG] SoundI::release                          :     skisHigh (0000024416EEC668)
+[LOG] SoundI::release                          :     skisHigh (000002441ECEA8E8)
+[LOG] SoundI::release                          : skisLow (00000244AC52A898)
+[LOG] SoundI::release                          :     skisLow (0000024416EEBE48)
+[LOG] SoundI::release                          :     skisLow (00000244AE631248)
+[LOG] SoundI::release                          : skitrip1 (00000244AC52A538)
+[LOG] SoundI::release                          :     skitrip1 (0000024416EED1C8)
+[LOG] SoundI::release                          :     skitrip1 (00000244AE631098)
+[LOG] SoundI::release                          :  (00000244AE95CED8)
+[LOG] SoundI::release                          :     turn1 (000002441B926F98)
+[LOG] SoundI::release                          :  (000002441A2668D8)
+[LOG] SoundI::release                          :     turn2 (000002441B924BD8)
+[LOG] SoundI::release                          :  (000002441A266318)
+[LOG] SoundI::release                          :     turn3 (000002441B925DB8)
+[LOG] SoundI::release                          :  (00000244AE95CD68)
+[LOG] SoundI::release                          :     turn4 (000002441B923D38)
+[LOG] SoundI::release                          :  (000002441A266768)
+[LOG] SoundI::release                          :     turn5 (000002441B9253F8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -23,3 +188,5 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.

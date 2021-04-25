@@ -16,10 +16,14 @@ public class PlayerController : MonoBehaviour
 
     public bool move = true;
 
+    public GameObject pauseMenu;
+    public bool paused = false;
+
     private Vector3 moveVec = new Vector3(0,0,0);
 
     public delegate void SteerEvent(float steerInputValue);
     public delegate void LoadCheckpointEvent(int checkpoint);
+    public delegate void PauseEvent(bool paused);
 
     //OnSteer is automatically a thing because we have 
     //an action called "steer" in the input map thing
@@ -67,9 +71,34 @@ public class PlayerController : MonoBehaviour
     //end of bad dev hacks for now
 
     public event LoadCheckpointEvent LoadCheckpoint;
-    void OnLoadCheckpoint (int checkpoint)
+    public void OnLoadCheckpoint (int checkpoint)
     {
+        Resume();
         LoadCheckpoint?.Invoke(checkpoint);
+    }
+
+    public event PauseEvent PauseToggle;
+    void OnPause (InputValue value)
+    {
+        paused = !paused;
+        PauseToggle?.Invoke(paused);
+        pauseMenu.SetActive(paused);
+        if (paused)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void Resume ()
+    {
+        paused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        PauseToggle?.Invoke(false);
     }
 
     private void Update()
