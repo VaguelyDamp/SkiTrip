@@ -167,7 +167,7 @@ public class UImanager : MonoBehaviour
                     1f,
                     trackerMarkerStart,
                     trackerMarkerEnd
-                ), -114.96f);
+                ), -139.33f);
     }
 
     public void BackOut ()

@@ -37324,7 +37324,23 @@ PrefabInstance:
     - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
       propertyPath: phase1Tracker
       value: 
-      objectReference: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: bb3bdeadb68b98b48b2af166c2ccdabf, type: 3}
+    - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
+      propertyPath: phase2Tracker
+      value: 
+      objectReference: {fileID: 21300000, guid: bef47722dfddaa24eba9856b77995162, type: 3}
+    - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
+      propertyPath: phase3Tracker
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ada7ea3ba3903449be2deee1dbd17a1, type: 3}
+    - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
+      propertyPath: trackerMarker
+      value: 
+      objectReference: {fileID: 208105742}
+    - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
+      propertyPath: trackerMarkerGO
+      value: 
+      objectReference: {fileID: 208105740}
     - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
       propertyPath: trackerMarkerEnd
       value: 484
@@ -37332,7 +37348,7 @@ PrefabInstance:
     - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
       propertyPath: phase1MarkerLocked
       value: 
-      objectReference: {fileID: 21300000, guid: ad49793b0a892ed4c802dc5d4ebe9d1d, type: 3}
+      objectReference: {fileID: 21300000, guid: 07b6b0a53ed6b38459c6e24461315e66, type: 3}
     - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
       propertyPath: trackerMarkerStart
       value: -484.76
@@ -37340,14 +37356,18 @@ PrefabInstance:
     - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
       propertyPath: phase1MarkerCleared
       value: 
-      objectReference: {fileID: 21300000, guid: c4f32b6bf03d8e44498fe579889ae29e, type: 3}
+      objectReference: {fileID: 21300000, guid: 3a1aa912d0632f545be464bc0e9c22de, type: 3}
     - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
       propertyPath: checkpointMarkers.Array.size
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
       propertyPath: phase2MarkersLocked.Array.size
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
+      propertyPath: phase3MarkersLocked.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
       propertyPath: checkpointMarkers.Array.data[0]
@@ -37379,16 +37399,44 @@ PrefabInstance:
       objectReference: {fileID: 1739415862}
     - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
       propertyPath: phase2MarkersCleared.Array.size
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
+      propertyPath: phase3MarkersCleared.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
       propertyPath: phase2MarkersLocked.Array.data[0]
       value: 
-      objectReference: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 238e555c2025b0344aa34e701c17227a, type: 3}
+    - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
+      propertyPath: phase2MarkersLocked.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9f24c221cc08cfb4fb1df1cacb05ccb6, type: 3}
+    - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
+      propertyPath: phase3MarkersLocked.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 188e9af157f4a6449bb6dd52357d9e02, type: 3}
+    - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
+      propertyPath: phase3MarkersLocked.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a82c7952903b1941a0474c7cc8c42df, type: 3}
     - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
       propertyPath: phase2MarkersCleared.Array.data[0]
       value: 
-      objectReference: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 92ec060d77ca0eb4495360a2a8a3a552, type: 3}
+    - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
+      propertyPath: phase2MarkersCleared.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a348d4d7625e43419466926fe280aa1, type: 3}
+    - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
+      propertyPath: phase3MarkersCleared.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: e87b426aacbe2664ca71f268d12a1a5d, type: 3}
+    - target: {fileID: 7570539195975332595, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
+      propertyPath: phase3MarkersCleared.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: f45b0e3f5206444478609cc6234f5395, type: 3}
     - target: {fileID: 7570539195975332596, guid: 683c4dfa015c09e42afe75b82029cd3d, type: 3}
       propertyPath: m_Pivot.x
       value: 0

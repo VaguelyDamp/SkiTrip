@@ -11,5 +11,6 @@ class CheckpointData : MonoBehaviour
     public int timelinePosition;
     public Vector2 position;
     public float trackerPosition;
+    public Cinemachine.CinemachineVirtualCamera vcam;
 }
 
