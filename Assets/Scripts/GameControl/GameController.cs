@@ -4,20 +4,11 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public delegate void DeathEvent();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public event DeathEvent OnDeath;
     public void Death()
     {
-        Debug.Log("Death");
+        OnDeath?.Invoke();
     }
 }
