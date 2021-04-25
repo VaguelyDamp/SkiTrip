@@ -50,6 +50,8 @@ public class CheckpointManager : MonoBehaviour
         {
             GameObject checkpointGO = GameObject.Find("Checkpoint" + (i + 1));
             checkpoints[i + 1].position = checkpointGO.transform.Find("RespawnPoint").position;
+            //checkpoints[i + 1].position.y += 10f;
+            //checkpoints[i + 1].position.z -= 30f;
             checkpoints[i + 1].vcam = checkpointGO.GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>();
         }
         songTimeline = FMODUnity.RuntimeManager.CreateInstance(startMusic);
