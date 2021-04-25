@@ -325,7 +325,7 @@ MonoBehaviour:
   horizantalSpeed: 12
   speeds:
   - 12
-  - 24
+  - 18
   speedIndex: 0
   maxAccel: 0.005
   gravityModifier: 0.7
