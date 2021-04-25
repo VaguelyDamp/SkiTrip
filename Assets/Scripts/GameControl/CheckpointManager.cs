@@ -13,7 +13,7 @@ public class CheckpointManager : MonoBehaviour
     public string startMusic;
 
     public float progressThroughGame = 0f;
-    public float endOfGame = 147065f;
+    public float endOfGame = 316043;
 
     private GameObject player;
     private PlayerController playerController;
@@ -22,13 +22,19 @@ public class CheckpointManager : MonoBehaviour
 
     IDictionary<int, CheckpointData> checkpoints = new Dictionary<int, CheckpointData>()
     {
-        {1, new CheckpointData(9047, 0)},
-        {2, new CheckpointData(32997, 0)},
-        {3, new CheckpointData(56999, 0)},
-        {4, new CheckpointData(69081, 0)},
-        {5, new CheckpointData(81059, 0)},
-        {6, new CheckpointData(105098, 0)},
-        {7, new CheckpointData(147065, 0)}
+        {1, new CheckpointData(9047)},
+        {2, new CheckpointData(32997)},
+        {3, new CheckpointData(56999)},
+        {4, new CheckpointData(69081)},
+        {5, new CheckpointData(81059)},
+        {6, new CheckpointData(105098)},
+        {7, new CheckpointData(147065)},
+        {8, new CheckpointData(171957)},
+        {9, new CheckpointData(204054)},
+        {10, new CheckpointData(236003)},
+        {11, new CheckpointData(252008)},
+        {12, new CheckpointData(284036)},
+        {13, new CheckpointData(316043)}
     };
 
     public int currentCheckpoint = 1;
@@ -46,7 +52,7 @@ public class CheckpointManager : MonoBehaviour
     {
         //should change i < to be less than total number of checkpoint
         //gates actually implemented in game
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 13; i++)
         {
             GameObject checkpointGO = GameObject.Find("Checkpoint" + (i + 1));
             checkpoints[i + 1].position = checkpointGO.transform.Find("RespawnPoint").position;

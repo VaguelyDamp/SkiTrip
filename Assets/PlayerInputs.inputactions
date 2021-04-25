@@ -70,6 +70,54 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Checkpoint8",
+                    "type": "Button",
+                    "id": "7818b59a-652d-4561-bbff-47c277930b85",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Checkpoint9",
+                    "type": "Button",
+                    "id": "3d812021-d657-486e-b23c-9d0db97cb315",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Checkpoint10",
+                    "type": "Button",
+                    "id": "5762a575-f07f-4fc5-ade8-8a17dff44262",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Checkpoint11",
+                    "type": "Button",
+                    "id": "5a784ccc-fea0-4a24-8a48-20c684571d7c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Checkpoint12",
+                    "type": "Button",
+                    "id": "83df249d-14d1-457b-92ea-d08a394077bc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Checkpoint13",
+                    "type": "Button",
+                    "id": "b5531316-1a32-4b1b-ac34-62b8b4bd774c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "24abd451-1a4a-4014-9afd-29d891467eef",
@@ -197,6 +245,72 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ed47577-da90-4b0e-b4f8-b7a688a9295e",
+                    "path": "<Keyboard>/8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Checkpoint8",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "faea8b3d-aeff-4e21-bb86-74e45f174e60",
+                    "path": "<Keyboard>/9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Checkpoint9",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3928cee8-c3f7-48ae-8f24-41f20ce61372",
+                    "path": "<Keyboard>/0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Checkpoint10",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82b66fd6-2cb1-494e-a2f5-4f9734daaae6",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Checkpoint11",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "84b70b9b-f2eb-4054-ba6c-5b0f4df9bbbe",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Checkpoint12",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d744982-4a92-49fa-9237-503f47fc118e",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Checkpoint13",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

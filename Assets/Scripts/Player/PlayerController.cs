@@ -98,6 +98,30 @@ public class PlayerController : MonoBehaviour
     {
         OnLoadCheckpoint(7);
     }
+    void OnCheckpoint8 (InputValue value)
+    {
+        OnLoadCheckpoint(8);
+    }
+    void OnCheckpoint9 (InputValue value)
+    {
+        OnLoadCheckpoint(9);
+    }
+    void OnCheckpoint10 (InputValue value)
+    {
+        OnLoadCheckpoint(10);
+    }
+    void OnCheckpoint11 (InputValue value)
+    {
+        OnLoadCheckpoint(11);
+    }
+    void OnCheckpoint12 (InputValue value)
+    {
+        OnLoadCheckpoint(12);
+    }
+    void OnCheckpoint13 (InputValue value)
+    {
+        OnLoadCheckpoint(13);
+    }
     //end of bad dev hacks for now
 
     public event LoadCheckpointEvent LoadCheckpoint;
