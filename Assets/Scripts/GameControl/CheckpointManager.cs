@@ -166,6 +166,7 @@ public class CheckpointManager : MonoBehaviour
         {
             checkpoints[currentCheckpoint].vcam.enabled = false;
             currentCheckpoint++;
+            checkpoints[currentCheckpoint].vcam.enabled = true;
             uiManager.ChangeCheckpointMarkers(phase);
             uiManager.ChangeTrackerMarker(phase);
             Debug.Log("Current Checkpoint: " + currentCheckpoint);
