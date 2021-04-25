@@ -24,6 +24,12 @@ public class SkiSFX : MonoBehaviour
             .CreateInstance(idleEvent);
         idleInstance.start();
         playerController.Steer += (value) => SteerSfx(value);
+        playerController.PauseToggle += (paused) => OnPauseToggle(paused);
+    }
+
+    private void OnPauseToggle (bool paused)
+    {
+        idleInstance.setPaused(paused);
     }
 
     public void SteerSfx (float steerInputValue)
