@@ -72,7 +72,17 @@ public class CheckpointManager : MonoBehaviour
             checkpoints[currentCheckpoint].position.x, 
             checkpoints[currentCheckpoint].position.y);
         SongTransition();
+        if (currentCheckpoint == checkpoints.Count)
+        {
+           // TriggerWin();
+        }
     }
+
+    // public event WinEvent OnWin;
+    // void TriggerWin (InputValue value)
+    // {
+    //     OnWin?.Invoke();
+    // }
 
     public void OnDeath ()
     {
