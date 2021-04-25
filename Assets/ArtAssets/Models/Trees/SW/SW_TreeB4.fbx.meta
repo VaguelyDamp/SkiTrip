@@ -3,7 +3,27 @@ guid: 5d40373c24215e54cba9a5e81dbfccdb
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TrunkMtl
+    second: {fileID: 2100000, guid: d2231221725e81a40b3e32396270d604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cornea
+    second: {fileID: 2100000, guid: 00aec46ec21d9e24fbdd29b68177245f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iris
+    second: {fileID: 2100000, guid: 958ce0ba139d7c04fa685d6e33ce11d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pupil
+    second: {fileID: 2100000, guid: 03875eb5c3955fe4e82f202ba6e394b2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

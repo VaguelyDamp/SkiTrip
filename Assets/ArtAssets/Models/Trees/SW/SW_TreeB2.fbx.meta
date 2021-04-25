@@ -3,7 +3,27 @@ guid: b28042c69fcf6e3468539496ccfae84f
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SnowMtl
+    second: {fileID: 2100000, guid: 798aca0d23a47614782584b3a45966eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeLeafMtl
+    second: {fileID: 2100000, guid: e0541dc53ad0b8e44b65fd8c0f4c94d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TrunkMtl
+    second: {fileID: 2100000, guid: d2231221725e81a40b3e32396270d604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn11
+    second: {fileID: 2100000, guid: d67262f581174614a8b900641d49ce78, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
