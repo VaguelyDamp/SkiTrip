@@ -143,9 +143,9 @@ public class PlayerController : MonoBehaviour
         };
     }
 
-    public void MoveToCheckPoint(Vector2 position)
+    public void MoveToCheckPoint(Vector3 position)
     {
-        checkpointMove = new Vector3(0, position.x, position.y);
+        checkpointMove = position;
         Debug.Log("Moving to checkpoint: " + checkpointMove);
         movingToCheckPoint = true;
     }
