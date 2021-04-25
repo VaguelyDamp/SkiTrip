@@ -63,6 +63,11 @@ MonoBehaviour:
   treeButt: {fileID: 6580582276636307659}
   oldSpacing: 0
   newSpacing: 0
+  randomizeRotation: 1
+  randomizeVariant: 1
+  variants:
+  - {fileID: 1586151365098165710}
+  - {fileID: 4811972040960799297, guid: 7e129af74e41fd54997de69696e9b5db, type: 3}
 --- !u!1 &6580582276636307659
 GameObject:
   m_ObjectHideFlags: 0
