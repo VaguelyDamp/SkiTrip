@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public float horizantalSpeed = 5;
     public float[] speeds;
+    public Quaternion[] slopRotations;
     private float forwardSpeed;
     public int speedIndex;
     public float maxAccel = .5f;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private float horizantalInput;
     private float horiMove = 0;
     private float yRot = 0;
+    private float xRot = 0;
 
     public bool move = true;
 
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour
             .GetComponent<GameController>();
         gameController.OnDeath += OnDeath;
 
-        currentRotation = new Quaternion(0.1f, 0.0f, 0.0f, 1.0f);
+        currentRotation = slopRotations[speedIndex];
 
         speedIndex = 0;
         forwardSpeed = speeds[speedIndex];
@@ -172,16 +174,35 @@ public class PlayerController : MonoBehaviour
         };
     }
 
+    private void FixedUpdate()
+    {
+        if (!characterController.isGrounded)
+        {
+            Debug.Log(transform.rotation.eulerAngles.x);
+            if (transform.rotation.eulerAngles.x > 10)
+            {
+                transform.Rotate(transform.right, -1f);
+            }
+            else
+            {
+                transform.Rotate(transform.right, 1f);
+            }
+        }
+    }
+
     public void IncreaseSpeed()
     {
         speedIndex++;
         forwardSpeed = speeds[speedIndex];
+        Debug.Log("Rotation: " + transform.rotation);
+        currentRotation = slopRotations[speedIndex];
     }
 
     public void DecreaseSpeed()
     {
         speedIndex--;
         forwardSpeed = speeds[speedIndex];
+        currentRotation = slopRotations[speedIndex];
     }
 
     public void MoveToCheckPoint(Vector3 position)
@@ -200,7 +221,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = currentRotation;
             movingToCheckPoint = false;
             virtualCamera.enabled = true;
-            //Debug.Log("Rotation: " + transform.rotation);
+            
             characterController.enabled = true;
             //Debug.Log("Actually applied checkpoint move");
         }
@@ -208,8 +229,6 @@ public class PlayerController : MonoBehaviour
         {
             yRot = Mathf.MoveTowardsAngle(yRot, horizantalInput * maxRotationAngle, rotateAccel);
             model.transform.eulerAngles = new Vector3(model.transform.eulerAngles.x, yRot, transform.eulerAngles.z);
-
-            //transform.Rotate(transform.up, horizantalInput * maxRotationAngle * rotateAccel * Time.deltaTime);
 
             horiMove = Mathf.MoveTowards(horiMove, horizantalInput, maxAccel);
             moveVec = new Vector3(horiMove * horizantalSpeed, 0, forwardSpeed);

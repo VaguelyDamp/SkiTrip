@@ -13,7 +13,7 @@ public class CheckpointManager : MonoBehaviour
     public string startMusic;
 
     public float progressThroughGame = 0f;
-    public float endOfGame = 316043;
+    private float endOfGame = 316043f;
 
     private GameObject player;
     private PlayerController playerController;
@@ -176,7 +176,7 @@ public class CheckpointManager : MonoBehaviour
             uiManager.ChangeTrackerMarker(phase);
             Debug.Log("Current Checkpoint: " + currentCheckpoint);
         }
-
+        
         if (playerController.speedIndex < 1 && curPosition >= checkpoints[8].timelinePosition)
         {
             playerController.IncreaseSpeed();
