@@ -11,6 +11,7 @@ TagManager:
   - Ramp
   - Death
   - RagdollRB
+  - Collectable
   layers:
   - Default
   - TransparentFX

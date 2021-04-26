@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollectableViewer : MonoBehaviour
 {
     private string[] collectableNames = new string[]{"Queen", "Car", "Whale", "Red", "Clippy"};
+    //private Collectable.CollectableType cType;
 
     public void ShowCollectables ()
     {
