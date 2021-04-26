@@ -97,7 +97,7 @@ public class CheckpointManager : MonoBehaviour
     public void LoadCheckpoint (int checkpoint)
     {
         currentCheckpoint = checkpoint;
-        
+
         
         //playerController.move = false;
         if (checkpoint >= phase3Start)
@@ -134,10 +134,10 @@ public class CheckpointManager : MonoBehaviour
     {
         songTimeline.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         SwitchCameras(currentCheckpoint);
-        StartCoroutine(UnDie());
+        //StartCoroutine(UnDie());
     }
 
-    private IEnumerator UnDie ()
+    public IEnumerator UnDie ()
     {
         yield return new WaitForSeconds(deathTime);
         songTimeline.start();
