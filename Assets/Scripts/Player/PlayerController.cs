@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
     void OnSteer(InputValue value)
     {
         Steer?.Invoke(value.Get<float>());
-        if (characterController.isGrounded) horizantalInput = value.Get<float>();
+        horizantalInput = value.Get<float>();
     }
 
     //These are all dev hacks which is why bad code
@@ -391,8 +391,11 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Debug.Log("In Air wooooooosdofosdofsdosdfosdfofsdofdsosdfosfd");
+                horiMove = Mathf.MoveTowards(horiMove, horizantalInput, maxAccel * .01f);
+                horiAnim = Mathf.MoveTowards(horiAnim, horizantalInput, .005f);
                 if (animator)
                 {
+                    animator.SetFloat("Horizantal", horiAnim);
                     animator.SetBool("AirTime", true);
                 }
                 horiMove = 0;
