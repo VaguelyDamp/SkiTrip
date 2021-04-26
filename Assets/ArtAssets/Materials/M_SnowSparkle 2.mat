@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3058994787002976588
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 4
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -7,11 +20,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Skybox
-  m_Shader: {fileID: -6465566751694194690, guid: aa091adb4ebaac147b0513106f4fc3ea, type: 3}
+  m_Name: M_SnowSparkle 2
+  m_Shader: {fileID: -6465566751694194690, guid: f3f89cc63ecb2b2419ebf9ef9d7420a5, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -19,8 +32,16 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_b89d7567889c45d7ae5f45b8378b8f45:
-        m_Texture: {fileID: 2800000, guid: 8c503045440ad8c44af3be27cf03a956, type: 3}
+    - Texture2D_46c8ee8366a5428194940df3d82fe026:
+        m_Texture: {fileID: 2800000, guid: 48bc1aa1d9d700348b97f659d57214a1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_642631d7cd55458caef98656c7108a4b:
+        m_Texture: {fileID: 2800000, guid: 6595fdb9063e37141b2337e32586c5bf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_6879c5a50747442c97014002c910f88a:
+        m_Texture: {fileID: 2800000, guid: 5b72e9168f1892c46958b612e6418ffa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -80,9 +101,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2db06dbc4ff24920b583a83b0c989814: 0.25
-    - Vector1_3be66f9c7d004c478bb8c4da09d68e1a: 0.6
-    - Vector1_4ccead5d02ba4cea979d10785e0838dd: 0.52
+    - Vector1_7cf97bf4d4924facb4b4f92e09712d71: 0.53
+    - Vector1_99661c11026b43ffbeb36f22caf3f8e5: 3.85
+    - Vector1_fc44f85d2e534317b977f57b6f9676b5: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -110,31 +131,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_4238add120b94721a9bb648960fd0a4e: {r: 1, g: 0.7870011, b: 0.3160377, a: 0}
-    - Color_72673c371b084e89a2d70fa2d6c7988c: {r: 1, g: 0.19814461, b: 0, a: 0}
-    - Color_8842e000c5ae4303a26858070d470110: {r: 0, g: 0.8807576, b: 1, a: 0}
-    - Color_8b9e8b17068446acb1bc91d4b4b51273: {r: 0.14816093, g: 0, b: 1, a: 0}
-    - Vector2_7c207b7c04734a01b92aaddf7ae71905: {r: 0.3, g: 0.3, b: 0, a: 0}
-    - Vector2_e72f1a4d0d2546e0815120fa6d032c20: {r: 0.3, g: 0.3, b: 0, a: 0}
-    - Vector3_1fdff2b31ad2478097e8a6cdaee4eb25: {r: 0, g: 0, b: 0, a: 0}
-    - Vector3_2d899a638f2944b68ca53f620bd0fa4c: {r: 0, g: 0, b: 0, a: 0}
-    - Vector3_ac59641c24e54255a46d2e048758cae1: {r: 0, g: 0, b: 0, a: 0}
-    - Vector3_f48148b0e4c1421185263a6dcdb6f1b1: {r: 0, g: 0, b: 0, a: 0}
+    - Color_c10608f6d4ab44baa2cc9f692e236fbe: {r: 1, g: 1, b: 1, a: 0}
+    - Color_d51ddf3050a54b4191a7323029b88eba: {r: 0.7122642, g: 1, b: 0.9864062, a: 0}
+    - Vector2_c52dfaa1be84421ca43078a4a1f004e0: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &4800535254435794350
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 4
