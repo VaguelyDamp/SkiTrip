@@ -28,6 +28,11 @@ public class UImanager : MonoBehaviour
     public Sprite phase2Tracker;
     public Sprite phase3Tracker;
 
+    public Image fin;
+    public Sprite phase1Fin;
+    public Sprite phase2Fin;
+    public Sprite phase3Fin;
+
     private float test = 0f;
 
     void Start ()
@@ -79,30 +84,23 @@ public class UImanager : MonoBehaviour
 
     public void ChangeCheckpointMarkers (int phase)
     {
-        phase = 1;
-        int currentCheckpoint = checkpointManager.currentCheckpoint;
-        switch (phase)
+        Sprite[] images = null;
+        if (phase == 1)
         {
-            case 1:
-                break;
-            case 2:
-                foreach (GameObject marker in checkpointMarkers)
-                {
-                    Image markerImage = marker.GetComponent<Image>();
-                    int rand = Random.Range(0, phase2Markers.Length);
-                    markerImage.sprite = phase2Markers[rand];
-                }
-                break;
-            case 3:
-                foreach (GameObject marker in checkpointMarkers)
-                {
-                    Image markerImage = marker.GetComponent<Image>();
-                    int rand = Random.Range(0, phase3Markers.Length);
-                    markerImage.sprite = phase3Markers[rand];
-                }
-                break;
-            default:
-                break;
+            foreach (GameObject marker in checkpointMarkers)
+            {
+                Image markerImage = marker.GetComponent<Image>();
+                markerImage.sprite = phase1Marker;
+            }
+        }
+        if (phase == 2) images = phase2Markers;
+        if (phase == 3) images = phase3Markers;
+        if (images == null) return;
+        foreach (GameObject marker in checkpointMarkers)
+        {
+            Image markerImage = marker.GetComponent<Image>();
+            int rand = Random.Range(0, images.Length);
+            markerImage.sprite = images[rand];
         }
     }
 
@@ -111,12 +109,15 @@ public class UImanager : MonoBehaviour
         switch (phase)
         {
             case 1:
+                fin.sprite = phase1Fin;
                 trackerMarker.sprite = phase1Tracker;
                 break;
             case 2:
+                fin.sprite = phase2Fin;
                 trackerMarker.sprite = phase2Tracker;
                 break;
             case 3:
+                fin.sprite = phase3Fin; 
                 trackerMarker.sprite = phase3Tracker;
                 break;
             default:

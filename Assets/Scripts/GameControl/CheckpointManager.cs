@@ -47,8 +47,8 @@ public class CheckpointManager : MonoBehaviour
 
     public int currentCheckpoint = 1;
     public int phase = 1;
-    public int phase2Start = 3;
-    public int phase3Start = 6;
+    private int phase2Start = 8;
+    private int phase3Start = 14;
 
     public float Remap(float value, float fromStart, float fromEnd, float toStart, float toEnd)
     {
@@ -87,7 +87,19 @@ public class CheckpointManager : MonoBehaviour
     {
         currentCheckpoint = checkpoint;
         //playerController.move = false;
-        
+        if (checkpoint >= phase3Start)
+        {
+            phase = 3;
+        }
+        else if (checkpoint >= phase2Start)
+        {
+            phase = 2;
+        }
+        else
+        {
+            phase = 1;
+        }
+        Debug.Log("Phase: " + phase);
         playerController.MoveToCheckPoint(checkpoints[currentCheckpoint].position);
         Debug.Log("Telling player to move to checkpoint: " + checkpoints[currentCheckpoint].position);
         SongTransition();
@@ -157,18 +169,6 @@ public class CheckpointManager : MonoBehaviour
 
     void Update ()
     {
-        if (currentCheckpoint + 1 >= phase3Start)
-        {
-            phase = 3;
-        }
-        else if (currentCheckpoint + 1 >= phase2Start)
-        {
-            phase = 2;
-        }
-        else
-        {
-            phase = 1;
-        }
         int curPosition;
         songTimeline.getTimelinePosition(out curPosition);
         if (curPosition == 8900) Debug.Log("Now");
