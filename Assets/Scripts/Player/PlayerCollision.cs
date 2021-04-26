@@ -30,6 +30,11 @@ public class PlayerCollision : MonoBehaviour
             //ramping = true;
             //Debug.Log("Start Ramp");
         }
+
+        if (col.gameObject.name == "EpicBigChungusFloor")
+        {
+            playerController.OnWin();
+        }
     }
 
     private void OnTriggerExit(Collider other)

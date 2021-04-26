@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController: MonoBehaviour
 {
+
     public void LoadScene (string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -13,5 +14,11 @@ public class SceneController: MonoBehaviour
     public void QuitToDesktop ()
     {
         Application.Quit();
+    }
+
+    public void ReloadScene ()
+    {
+        Scene x = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(x.name);
     }
 }
