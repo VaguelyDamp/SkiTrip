@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public CharacterController characterController;
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
+    public Cinemachine.CinemachineVirtualCamera winCamera;
+
     public GameObject model;
 
     public Animator animator;
@@ -91,6 +93,18 @@ public class PlayerController : MonoBehaviour
         transform.Find("SkiPerson_Ragdoll").gameObject.SetActive(true);
         gameObject.GetComponent<RagdollController>().SetRagdoll(true);
         //gameObject.GetComponent<Rigidbody>().isKinematic = true;
+    }
+
+    public void OnWin ()
+    {
+        characterController.enabled = false;
+        virtualCamera.enabled = false;
+        winCamera.enabled = true;
+        transform.Find("SkiPerson_Anim").gameObject.SetActive(false);
+        transform.Find("SkiPerson_Ragdoll").gameObject.SetActive(true);
+        gameObject.GetComponent<RagdollController>().SetRagdoll(true);
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        GameObject.Find("UI").GetComponent<UImanager>().OnWin();
     }
 
     //OnSteer is automatically a thing because we have 

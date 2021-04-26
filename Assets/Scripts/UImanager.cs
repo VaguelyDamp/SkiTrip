@@ -20,6 +20,9 @@ public class UImanager : MonoBehaviour
     public Sprite[] phase2Markers;
     public Sprite[] phase3Markers;
 
+    public GameObject winScreen;
+    public GameObject progressTracker;
+
     public GameObject trackerMarkerGO;
     public Image trackerMarker;
     public float trackerMarkerStart;
@@ -46,6 +49,12 @@ public class UImanager : MonoBehaviour
             .GetComponent<CheckpointManager>();
         ChangeCheckpointMarkers(1);
         trackerMarkerGO = GameObject.Find("TrackerMarker");
+    }
+
+    public void OnWin ()
+    {
+        progressTracker.SetActive(false);
+        winScreen.SetActive(true);
     }
 
     private void OnDeath ()
