@@ -10,7 +10,10 @@ public class PlayerController : MonoBehaviour
 
     public CharacterController characterController;
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
+    public Cinemachine.CinemachineVirtualCamera ragdollCamera;
     public Cinemachine.CinemachineVirtualCamera winCamera;
+
+    public CheckpointManager checkpointManager;
 
     public GameObject model;
 
@@ -80,6 +83,8 @@ public class PlayerController : MonoBehaviour
 
         playerCollision = gameObject.GetComponent<PlayerCollision>();
 
+        checkpointManager = GameObject.Find("CheckpointManager").GetComponent<CheckpointManager>();
+
         currentRotation = slopRotations[speedIndex];
 
         speedIndex = 0;
@@ -105,7 +110,15 @@ public class PlayerController : MonoBehaviour
         transform.Find("SkiPerson_Anim").gameObject.SetActive(false);
         transform.Find("SkiPerson_Ragdoll").gameObject.SetActive(true);
         gameObject.GetComponent<RagdollController>().SetRagdoll(true);
+        StartCoroutine(RagdollCameraCo());
         //gameObject.GetComponent<Rigidbody>().isKinematic = true;
+    }
+
+    public IEnumerator RagdollCameraCo()
+    {
+        yield return new WaitForSeconds(2f);
+        ragdollCamera.enabled = false;
+        StartCoroutine(checkpointManager.UnDie());
     }
 
     public void OnWin ()
@@ -252,6 +265,7 @@ public class PlayerController : MonoBehaviour
     {
         Resume();
         LoadCheckpoint?.Invoke(checkpoint);
+        checkpointManager.SwitchCameras(checkpointManager.currentCheckpoint);
     }
 
     public event PauseEvent PauseToggle;
@@ -369,6 +383,7 @@ public class PlayerController : MonoBehaviour
             movingToCheckPoint = false;
 
             virtualCamera.enabled = true;
+            ragdollCamera.enabled = true;
             characterController.enabled = true;
         }
         else

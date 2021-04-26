@@ -83,15 +83,22 @@ public class CheckpointManager : MonoBehaviour
         songTimeline.setPaused(paused);
     }
 
-    public void LoadCheckpoint (int checkpoint)
+    public void SwitchCameras(int checkpoint)
     {
-        currentCheckpoint = checkpoint;
         foreach (CheckpointData cpd in checkpoints.Values)
         {
             cpd.vcam.enabled = false;
-            Debug.Log(cpd.vcam);
+            //Debug.Log(cpd.vcam);
         }
         checkpoints[currentCheckpoint].vcam.enabled = true;
+        Debug.Log("Enabled cam: " + checkpoints[currentCheckpoint].vcam);
+    }
+
+    public void LoadCheckpoint (int checkpoint)
+    {
+        currentCheckpoint = checkpoint;
+
+        
         //playerController.move = false;
         if (checkpoint >= phase3Start)
         {
@@ -126,10 +133,11 @@ public class CheckpointManager : MonoBehaviour
     public void OnDeath ()
     {
         songTimeline.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        StartCoroutine(UnDie());
+        SwitchCameras(currentCheckpoint);
+        //StartCoroutine(UnDie());
     }
 
-    private IEnumerator UnDie ()
+    public IEnumerator UnDie ()
     {
         yield return new WaitForSeconds(deathTime);
         songTimeline.start();
