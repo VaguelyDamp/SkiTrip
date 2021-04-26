@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
         transform.Find("SkiPerson_Anim").gameObject.SetActive(false);
         transform.Find("SkiPerson_Ragdoll").gameObject.SetActive(true);
         gameObject.GetComponent<RagdollController>().SetRagdoll(true);
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        //gameObject.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     //OnSteer is automatically a thing because we have 
