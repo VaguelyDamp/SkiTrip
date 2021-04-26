@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CollectableViewer : MonoBehaviour
 {
     private string[] collectableNames = new string[]{"Queen", "Car", "Whale", "Red", "Clippy"};
+    private Text coolText;
     //private Collectable.CollectableType cType;
+
+    void Start ()
+    {
+        coolText = GameObject.Find("CollectableText")
+            .GetComponent<Text>();
+        ShowCollectables();
+    }
 
     public void ShowCollectables ()
     {
@@ -28,7 +37,7 @@ public class CollectableViewer : MonoBehaviour
         }
         if (totalUnlocked == 15)
         {
-            //update cool text
+            coolText.text = "Wow you got them all you are so COOL damnnn";
         }
     }
 }
