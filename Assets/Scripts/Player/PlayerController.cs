@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
 
     private PlayerCollision playerCollision;
+    private CapsuleCollider pbCol;
 
     public float horizantalSpeed = 5;
     public float[] speeds;
@@ -77,6 +78,8 @@ public class PlayerController : MonoBehaviour
         forwardSpeed = speeds[speedIndex];
 
         isCrouched = false;
+
+        pbCol = transform.Find("BodyDeathCollider").GetComponent<CapsuleCollider>();
     }
 
     private void OnDeath()
@@ -161,6 +164,21 @@ public class PlayerController : MonoBehaviour
         if (animator)
         {
             animator.SetBool("Crouched", isCrouched);
+        }
+
+        if (isCrouched)
+        {
+            pbCol.height = 0.8f;
+            characterController.height = 0.8f;
+            pbCol.center = new Vector3(0, 0.375f, -0.05f);
+            characterController.center = new Vector3(0, 0.375f, -0.05f);
+        }
+        else
+        {
+            pbCol.height = 1.6f;
+            characterController.height = 1.6f;
+            pbCol.center = new Vector3(0, 0.75f, -0.05f);
+            characterController.center = new Vector3(0, .75f, -0.05f);
         }
     }
 
