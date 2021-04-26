@@ -118,6 +118,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Checkpoint14",
+                    "type": "Button",
+                    "id": "e77b0007-2bd8-4291-9262-dd22fa8e2fd9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "24abd451-1a4a-4014-9afd-29d891467eef",
@@ -341,6 +349,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "756facdc-6b83-4a38-a4a4-b8da300047a0",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Checkpoint14",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
