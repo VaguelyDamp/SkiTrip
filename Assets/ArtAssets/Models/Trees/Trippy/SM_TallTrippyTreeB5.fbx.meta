@@ -3,7 +3,32 @@ guid: 2a5131372a659de4d9abe7ec403fbbbc
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bananaButtMtl
+    second: {fileID: 2100000, guid: 99d28cec840e94d439f302e5cf839061, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cornea
+    second: {fileID: 2100000, guid: ea6d1446b9f6ed94eacc2f82babf4cbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 993bc9b0d6557cb4994434d413991b01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: smokeAMtl
+    second: {fileID: 2100000, guid: ed4c8f12c3852a947b3c3ede958658f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: typeBlinn
+    second: {fileID: 2100000, guid: 35ba94615f54f29458e0a98e37b30059, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
