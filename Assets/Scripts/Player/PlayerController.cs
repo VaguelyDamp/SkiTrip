@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    public GameObject ragdoll;
+
     private Transform animModel;
 
     private PlayerCollision playerCollision;
@@ -338,7 +340,9 @@ public class PlayerController : MonoBehaviour
         checkpointMove = position;
         Debug.Log("Moving to checkpoint: " + checkpointMove);
         gameObject.GetComponent<RagdollController>().SetRagdoll(false);
-        transform.Find("SkiPerson_Ragdoll").gameObject.SetActive(false);
+        GameObject oldRagdoll = transform.Find("SkiPerson_Ragdoll").gameObject;
+        oldRagdoll.SetActive(false);
+        Destroy(oldRagdoll);
         
 
         movingToCheckPoint = true;
@@ -352,6 +356,12 @@ public class PlayerController : MonoBehaviour
             animModel.gameObject.SetActive(true);
             animModel.transform.localEulerAngles = Vector3.zero;
             animModel.transform.localPosition = Vector3.zero;
+
+            GameObject newRagdoll = Instantiate(ragdoll,this.transform);
+            newRagdoll.transform.localPosition = Vector3.zero;
+            newRagdoll.transform.localEulerAngles = Vector3.zero;
+            newRagdoll.name = "SkiPerson_Ragdoll";
+            newRagdoll.SetActive(false);
 
             transform.position = checkpointMove;
             transform.rotation = currentRotation;
