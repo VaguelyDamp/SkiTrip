@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    private Transform animModel;
+
     private PlayerCollision playerCollision;
     private CapsuleCollider pbCol;
 
@@ -53,6 +55,8 @@ public class PlayerController : MonoBehaviour
     private float airYRot = 0;
     private float airZRot = 0;
 
+    public float targetXRot;
+
     private Vector3 moveVec = new Vector3(0,0,0);
 
     private GameController gameController;
@@ -82,6 +86,13 @@ public class PlayerController : MonoBehaviour
         isCrouched = false;
 
         pbCol = transform.Find("BodyDeathCollider").GetComponent<CapsuleCollider>();
+
+        Application.targetFrameRate = 60;
+
+        animModel = transform.Find("SkiPerson_Anim");
+        animModel.transform.localEulerAngles = Vector3.zero;
+        animModel.transform.localPosition = Vector3.zero;
+        transform.rotation = currentRotation;
     }
 
     private void OnDeath()
@@ -273,7 +284,20 @@ public class PlayerController : MonoBehaviour
     {
         if (!characterController.isGrounded)
         {
-            airXRot = Mathf.MoveTowardsAngle(transform.eulerAngles.x, 10, 2);
+            int layerMask = 1 << 6;
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
+            {
+                targetXRot = hit.transform.eulerAngles.x;
+            }
+            else 
+            {
+                targetXRot = 10;
+                Debug.Log("Can't Find Ground seting target x to 10");
+            }
+
+            airXRot = Mathf.MoveTowardsAngle(transform.eulerAngles.x, targetXRot, 2);
             airYRot = Mathf.MoveTowardsAngle(transform.eulerAngles.y, 0, 2);
             airZRot = Mathf.MoveTowardsAngle(transform.eulerAngles.z, 0, 2);
 
@@ -313,7 +337,6 @@ public class PlayerController : MonoBehaviour
 
         checkpointMove = position;
         Debug.Log("Moving to checkpoint: " + checkpointMove);
-        Transform animModel = transform.Find("SkiPerson_Anim");
         gameObject.GetComponent<RagdollController>().SetRagdoll(false);
         transform.Find("SkiPerson_Ragdoll").gameObject.SetActive(false);
         
@@ -325,7 +348,7 @@ public class PlayerController : MonoBehaviour
     {
         if (movingToCheckPoint)
         {
-            Transform animModel = transform.Find("SkiPerson_Anim");
+            
             animModel.gameObject.SetActive(true);
             animModel.transform.localEulerAngles = Vector3.zero;
             animModel.transform.localPosition = Vector3.zero;
