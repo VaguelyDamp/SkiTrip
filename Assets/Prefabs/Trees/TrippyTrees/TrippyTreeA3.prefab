@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1586151365098165706}
   - component: {fileID: 3252231504500610094}
+  - component: {fileID: 629459937939307956}
   m_Layer: 7
   m_Name: TrippyTreeA3
   m_TagString: Tree
@@ -30,6 +31,7 @@ Transform:
   m_Children:
   - {fileID: 3082439007256056352}
   - {fileID: 5632761884510673637}
+  - {fileID: 9157311439282200959}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53,6 +55,65 @@ MonoBehaviour:
   variants:
   - {fileID: 1586151365098165710}
   - {fileID: 4811972040960799297, guid: 7e129af74e41fd54997de69696e9b5db, type: 3}
+--- !u!136 &629459937939307956
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586151365098165710}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3.3
+  m_Height: 16.59
+  m_Direction: 1
+  m_Center: {x: 0, y: 7.72, z: 0}
+--- !u!1 &3317695620122212843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9157311439282200959}
+  - component: {fileID: 4176981333755082527}
+  m_Layer: 0
+  m_Name: DeathCollider
+  m_TagString: Death
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9157311439282200959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3317695620122212843}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1586151365098165706}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &4176981333755082527
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3317695620122212843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 3.48
+  m_Height: 16.59
+  m_Direction: 1
+  m_Center: {x: 0, y: 7.72, z: 0}
 --- !u!64 &8106632856075281625
 MeshCollider:
   m_ObjectHideFlags: 0
