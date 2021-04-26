@@ -108,6 +108,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnWin ()
     {
+        Debug.Log("Poongo");
         characterController.enabled = false;
         virtualCamera.enabled = false;
         winCamera.enabled = true;

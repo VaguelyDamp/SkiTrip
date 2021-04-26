@@ -17,7 +17,7 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        //Debug.Log("Colliding with: " + col.gameObject);
+        Debug.Log("Colliding with: " + col.gameObject.name);
         if (col.transform.tag == "Tree" || 
             col.transform.parent?.transform.tag == "Rock" ||
             col.transform.parent?.transform.parent.tag == "Prop")
@@ -31,10 +31,6 @@ public class PlayerCollision : MonoBehaviour
             //Debug.Log("Start Ramp");
         }
 
-        if (col.gameObject.name == "EpicBigChungusFloor")
-        {
-            playerController.OnWin();
-        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -55,6 +51,12 @@ public class PlayerCollision : MonoBehaviour
             //col.transform.parent?.transform.parent.tag == "Prop")
         {
             gameController.Death();
+        }
+
+        if (col.gameObject.name == "EpicBigChungusFloor")
+        {
+            Debug.Log("Hello");
+            playerController.OnWin();
         }
     }
 }
