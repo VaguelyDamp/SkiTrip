@@ -58,5 +58,13 @@ public class PlayerCollision : MonoBehaviour
             Debug.Log("Hello");
             playerController.OnWin();
         }
+
+        if (col.transform.tag == "Collectable")
+        {
+            Collectable collect = col.transform.parent.gameObject.GetComponent<Collectable>();
+            Collectable.CollectableType ctype = collect.collectableType;
+            Debug.Log("Collectable found: " + ctype);
+            PlayerPrefs.SetFloat(collect.collectableType.ToString()+collect.phase, 1);
+        }
     }
 }
