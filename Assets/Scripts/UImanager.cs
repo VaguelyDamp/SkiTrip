@@ -23,6 +23,12 @@ public class UImanager : MonoBehaviour
     public GameObject winScreen;
     public GameObject progressTracker;
 
+    public GameObject sun;
+    public Light sunLight;
+    public Vector2 dawn;
+    public Vector2 noon;
+    public Vector2 dusk;
+
     public GameObject trackerMarkerGO;
     public Image trackerMarker;
     public float trackerMarkerStart;
@@ -146,6 +152,54 @@ public class UImanager : MonoBehaviour
                     trackerMarkerStart,
                     trackerMarkerEnd
                 ), -19f);
+        MoveSun (checkpointManager.progressThroughGame);
+    }
+
+    private void MoveSun (float progress)
+    {
+        Vector2 from;
+        Vector2 to;
+        float subProgress;
+        if (progress >= 5f)
+        {
+            subProgress = Remap(
+                progress,
+                0.5f,
+                1f,
+                0f,
+                1f
+            );
+            from = noon;
+            to = dusk;
+        }
+        else
+        {
+            subProgress = Remap(
+                progress,
+                0f,
+                0.5f,
+                0f,
+                1f
+            );
+            from = dawn;
+            to = noon;
+        }
+
+        sun.transform.eulerAngles = new Vector3(Remap(
+            subProgress,
+            0f,
+            1f,
+            from.x,
+            to.x
+        ), Remap(
+            subProgress,
+            0f,
+            1f,
+            from.y,
+            to.y
+        ),
+            0f
+        );
     }
 
     public void BackOut ()
