@@ -46,6 +46,10 @@ public class PlayerController : MonoBehaviour
     public float gravInc = 0.1f;
     public float maxGrav = -10;
 
+    private float airXRot = 0;
+    private float airYRot = 0;
+    private float airZRot = 0;
+
     private Vector3 moveVec = new Vector3(0,0,0);
 
     private GameController gameController;
@@ -209,6 +213,11 @@ public class PlayerController : MonoBehaviour
     {
         if (!characterController.isGrounded)
         {
+            airXRot = Mathf.MoveTowardsAngle(transform.eulerAngles.x, 10, 1);
+            airYRot = Mathf.MoveTowardsAngle(transform.eulerAngles.y, 0, 1);
+            airZRot = Mathf.MoveTowardsAngle(transform.eulerAngles.z, 0, 1);
+
+            transform.eulerAngles = new Vector3(airXRot, airYRot, airZRot);
             //Debug.Log(transform.rotation.eulerAngles.x);
             if (transform.rotation.eulerAngles.x > 10)
             {
