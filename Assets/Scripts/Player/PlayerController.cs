@@ -5,14 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool ccIsGrounded;
-    private bool isCrouched;
-
     public CharacterController characterController;
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
     public GameObject model;
-
-    public Animator animator;
 
     private PlayerCollision playerCollision;
 
@@ -30,7 +25,6 @@ public class PlayerController : MonoBehaviour
 
     private float horizantalInput;
     private float horiMove = 0;
-    private float horiAnim = 0;
     public float vSpeed = -10;
     private float yRot = 0;
     private float xRot = 0;
@@ -71,8 +65,6 @@ public class PlayerController : MonoBehaviour
 
         speedIndex = 0;
         forwardSpeed = speeds[speedIndex];
-
-        isCrouched = false;
     }
 
     private void OnDeath()
@@ -92,7 +84,7 @@ public class PlayerController : MonoBehaviour
     void OnSteer(InputValue value)
     {
         Steer?.Invoke(value.Get<float>());
-        if (characterController.isGrounded) horizantalInput = value.Get<float>();
+        horizantalInput = value.Get<float>();
     }
 
     //These are all dev hacks which is why bad code
@@ -150,16 +142,6 @@ public class PlayerController : MonoBehaviour
     }
     //end of bad dev hacks for now
 
-    void OnCrouch (InputValue value)
-    {
-        isCrouched = !isCrouched;
-        Debug.Log("Crouched: " + isCrouched);
-        if (animator)
-        {
-            animator.SetBool("Crouched", isCrouched);
-        }
-    }
-
     public event LoadCheckpointEvent LoadCheckpoint;
     public void OnLoadCheckpoint (int checkpoint)
     {
@@ -201,8 +183,6 @@ public class PlayerController : MonoBehaviour
         {
 
         };
-
-        animator.GetCurrentAnimatorStateInfo(0);
     }
 
     private void FixedUpdate()
@@ -261,25 +241,12 @@ public class PlayerController : MonoBehaviour
             yRot = Mathf.MoveTowardsAngle(yRot, horizantalInput * maxRotationAngle, rotateAccel);
             model.transform.eulerAngles = new Vector3(model.transform.eulerAngles.x, yRot, transform.eulerAngles.z);
 
-            ccIsGrounded = characterController.isGrounded;
-
             if (characterController.isGrounded)
             {
                 horiMove = Mathf.MoveTowards(horiMove, horizantalInput, maxAccel);
-                horiAnim = Mathf.MoveTowards(horiAnim, horizantalInput, .1f);
-                if (animator)
-                {
-                    animator.SetFloat("Horizantal", horiAnim);
-                    animator.SetBool("AirTime", false);
-                }
             }
             else
             {
-                Debug.Log("In Air wooooooosdofosdofsdosdfosdfofsdofdsosdfosfd");
-                if (animator)
-                {
-                    animator.SetBool("AirTime", true);
-                }
                 horiMove = 0;
             }
             

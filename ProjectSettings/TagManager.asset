@@ -8,7 +8,6 @@ TagManager:
   - TreeGroup
   - Rock
   - Prop
-  - Ramp
   layers:
   - Default
   - TransparentFX
