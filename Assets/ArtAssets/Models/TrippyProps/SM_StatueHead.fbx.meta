@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 190d2e909e49d0940b39e9074b8c3889
+guid: 872fc0ebd8704e042a4cbd6e051b966f
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Ryan_Kingslien_Anatomy_Model
-    second: {fileID: 2100000, guid: c336f382dd550c14da39bc61b6ecf82e, type: 2}
+      name: BasicHead_blinn1
+    second: {fileID: 2100000, guid: 5cc2f1fa63ca17946b63c92d395f8d85, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

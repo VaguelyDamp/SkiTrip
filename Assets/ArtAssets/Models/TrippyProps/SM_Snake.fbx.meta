@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 190d2e909e49d0940b39e9074b8c3889
+guid: cb9c0237b1e53e944a6c6dde25c8cf44
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Ryan_Kingslien_Anatomy_Model
-    second: {fileID: 2100000, guid: c336f382dd550c14da39bc61b6ecf82e, type: 2}
+      name: Reptile_blinn1
+    second: {fileID: 2100000, guid: 35ba94615f54f29458e0a98e37b30059, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: snakeEyesMtl
+    second: {fileID: 2100000, guid: b5291694eb75e574aa3a1fb46d73b35f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: snakeToungeMtl
+    second: {fileID: 2100000, guid: 99d28cec840e94d439f302e5cf839061, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
