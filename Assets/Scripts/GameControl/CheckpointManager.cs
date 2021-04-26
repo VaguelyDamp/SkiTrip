@@ -171,7 +171,7 @@ public class CheckpointManager : MonoBehaviour
         if (checkpoints.Count >= currentCheckpoint + 1 &&
             curPosition >= checkpoints[currentCheckpoint + 1].timelinePosition)
         {
-            Debug.Log("Current Checkpoint: " + currentCheckpoint);
+            Debug.Log("Current Checkpoint: " + (currentCheckpoint + 1));
             checkpoints[currentCheckpoint].vcam.enabled = false;
             currentCheckpoint++;
             checkpoints[currentCheckpoint].vcam.enabled = true;
