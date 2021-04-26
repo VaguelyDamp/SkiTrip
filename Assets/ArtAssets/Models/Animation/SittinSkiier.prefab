@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 885d2c9bef0ce184093656e68d98d0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swayAmount: 3
-  swaySpeed: 0.2
+  swayAmount: 1
+  swaySpeed: 0.01
 --- !u!1 &3119476118889811257
 GameObject:
   m_ObjectHideFlags: 0
