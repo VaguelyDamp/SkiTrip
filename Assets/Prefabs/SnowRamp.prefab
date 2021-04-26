@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3188359506673739846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3823916676764173687}
+  - component: {fileID: 8606918408504486144}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3823916676764173687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188359506673739846}
+  m_LocalRotation: {x: -0.12624794, y: -0, z: -0, w: 0.99199873}
+  m_LocalPosition: {x: 0, y: 1.25, z: -0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2632585058662657494}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -14.506, y: 0, z: 0}
+--- !u!65 &8606918408504486144
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188359506673739846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.07933, y: 0.91471076, z: 18.028414}
+  m_Center: {x: 0.016525269, y: -0.042644814, z: -0.16555023}
 --- !u!1 &6138411071461287046
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,6 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 77124349427684225}
+  - component: {fileID: 2467330883792554857}
   m_Layer: 0
   m_Name: SnowRamp
   m_TagString: Untagged
@@ -28,23 +73,67 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2632585058662657494}
+  - {fileID: 8931953300714660417}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2203451908311774444
-MeshCollider:
+--- !u!114 &2467330883792554857
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9060549171489770359}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 6138411071461287046}
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5864320914214940941, guid: 99d1733a306806143b0dc7ffd7ff6847, type: 3}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4feb3a00b4cc1e8468a5cfd6bebdcf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accelTime: 1
+--- !u!1 &7287294445275246820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8931953300714660417}
+  - component: {fileID: 9182267023238095340}
+  m_Layer: 0
+  m_Name: ForceGate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8931953300714660417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287294445275246820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 77124349427684225}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9182267023238095340
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287294445275246820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.342449, y: 7.7712255, z: 1}
+  m_Center: {x: 0, y: 2.77, z: 2.14}
 --- !u!1001 &2522696753294854717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105,10 +194,5 @@ PrefabInstance:
 --- !u!4 &2632585058662657494 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 99d1733a306806143b0dc7ffd7ff6847, type: 3}
-  m_PrefabInstance: {fileID: 2522696753294854717}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &9060549171489770359 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2395947834023067318, guid: 99d1733a306806143b0dc7ffd7ff6847, type: 3}
   m_PrefabInstance: {fileID: 2522696753294854717}
   m_PrefabAsset: {fileID: 0}

@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
     public GameObject model;
 
+    private PlayerCollision playerCollision;
+
     public float horizantalSpeed = 5;
     public float[] speeds;
     public Quaternion[] slopRotations;
@@ -16,12 +18,14 @@ public class PlayerController : MonoBehaviour
     public int speedIndex;
     public float maxAccel = .5f;
     public float gravityModifier = 0.2f;
+    public float gravity = 10f;
 
     public float maxRotationAngle = 20f;
     public float rotateAccel = .1f;
 
     private float horizantalInput;
     private float horiMove = 0;
+    public float vSpeed = -10;
     private float yRot = 0;
     private float xRot = 0;
 
@@ -29,6 +33,12 @@ public class PlayerController : MonoBehaviour
 
     public GameObject pauseMenu;
     public bool paused = false;
+
+    public float applyRamp = 0;
+    public float rampSpeedInc = 1;
+    public float maxRampSpeed = 8;
+    public float gravInc = 0.1f;
+    public float maxGrav = -10;
 
     private Vector3 moveVec = new Vector3(0,0,0);
 
@@ -42,13 +52,14 @@ public class PlayerController : MonoBehaviour
     private Vector3 checkpointMove;
 
     private Quaternion currentRotation;
- 
 
     void Start ()
     {
         gameController = GameObject.Find("GameController")
             .GetComponent<GameController>();
         gameController.OnDeath += OnDeath;
+
+        playerCollision = gameObject.GetComponent<PlayerCollision>();
 
         currentRotation = slopRotations[speedIndex];
 
@@ -178,7 +189,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!characterController.isGrounded)
         {
-            Debug.Log(transform.rotation.eulerAngles.x);
+            //Debug.Log(transform.rotation.eulerAngles.x);
             if (transform.rotation.eulerAngles.x > 10)
             {
                 transform.Rotate(transform.right, -1f);
@@ -230,9 +241,29 @@ public class PlayerController : MonoBehaviour
             yRot = Mathf.MoveTowardsAngle(yRot, horizantalInput * maxRotationAngle, rotateAccel);
             model.transform.eulerAngles = new Vector3(model.transform.eulerAngles.x, yRot, transform.eulerAngles.z);
 
-            horiMove = Mathf.MoveTowards(horiMove, horizantalInput, maxAccel);
+            if (characterController.isGrounded)
+            {
+                horiMove = Mathf.MoveTowards(horiMove, horizantalInput, maxAccel);
+            }
+            else
+            {
+                horiMove = 0;
+            }
+            
+
             moveVec = new Vector3(horiMove * horizantalSpeed, 0, forwardSpeed);
-            moveVec += Physics.gravity * gravityModifier;
+            //moveVec += Physics.gravity * gravityModifier;
+            if (applyRamp > 0)
+            {
+                vSpeed = Mathf.MoveTowards(vSpeed, maxRampSpeed, rampSpeedInc);
+                applyRamp -= Time.deltaTime;
+            }
+            else
+            {
+                vSpeed = Mathf.MoveTowards(vSpeed, maxGrav, gravInc);
+            }
+            moveVec += new Vector3(0, vSpeed, 0);
+
             characterController.Move(Time.deltaTime * moveVec);
         }
     }
