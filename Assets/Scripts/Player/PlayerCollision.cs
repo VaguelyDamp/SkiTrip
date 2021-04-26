@@ -46,4 +46,15 @@ public class PlayerCollision : MonoBehaviour
             playerController.applyRamp = other.transform.parent.GetComponent<Ramp>().accelTime;
         }
     }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("Colliding trigger with: " + col.gameObject);
+        if (col.transform.tag == "Death")// || 
+            //col.transform.parent?.transform.tag == "Rock" ||
+            //col.transform.parent?.transform.parent.tag == "Prop")
+        {
+            gameController.Death();
+        }
+    }
 }

@@ -42,6 +42,51 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4742159398633034788, guid: 2a5131372a659de4d9abe7ec403fbbbc, type: 3}
+--- !u!1 &2979500977594924961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4062633858835405701}
+  - component: {fileID: 3912498435901626405}
+  m_Layer: 0
+  m_Name: DeathCollider
+  m_TagString: Death
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4062633858835405701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979500977594924961}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 900347689841663211}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &3912498435901626405
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979500977594924961}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.1543436
+  m_Height: 18.52961
+  m_Direction: 1
+  m_Center: {x: 0.31995678, y: 8.434078, z: 0}
 --- !u!64 &7008457958254120584
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -87,6 +132,7 @@ Transform:
   m_Children:
   - {fileID: 7478955521275609973}
   - {fileID: 81648724884168235}
+  - {fileID: 4062633858835405701}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -100,10 +146,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 7.6733646
+  m_Radius: 1.1543436
+  m_Height: 18.52961
   m_Direction: 1
-  m_Center: {x: 0.00000005960464, y: 1.9183178, z: -0.000000059604645}
+  m_Center: {x: 0.31995678, y: 8.434078, z: 0}
 --- !u!114 &962030770289785063
 MonoBehaviour:
   m_ObjectHideFlags: 0
