@@ -47,6 +47,7 @@ public class UImanager : MonoBehaviour
 
     void Start ()
     {
+        PlayerPrefs.SetFloat("Queen1", 1);
         if (SceneManager.GetActiveScene().name == "MainMenu") return;
         sceneController = GameObject.Find("SceneController")
             .GetComponent<SceneController>();
