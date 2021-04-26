@@ -9,6 +9,7 @@ TagManager:
   - Rock
   - Prop
   - Ramp
+  - Death
   layers:
   - Default
   - TransparentFX
