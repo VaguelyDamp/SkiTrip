@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
 
     private PlayerCollision playerCollision;
+    private CapsuleCollider pbCol;
 
     public float horizantalSpeed = 5;
     public float[] speeds;
@@ -77,12 +78,19 @@ public class PlayerController : MonoBehaviour
         forwardSpeed = speeds[speedIndex];
 
         isCrouched = false;
+
+        pbCol = transform.Find("BodyDeathCollider").GetComponent<CapsuleCollider>();
     }
 
     private void OnDeath()
     {
         characterController.enabled = false;
         virtualCamera.enabled = false;
+
+        transform.Find("SkiPerson_Anim").gameObject.SetActive(false);
+        transform.Find("SkiPerson_Ragdoll").gameObject.SetActive(true);
+        gameObject.GetComponent<RagdollController>().SetRagdoll(true);
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     //OnSteer is automatically a thing because we have 
@@ -194,6 +202,21 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("Crouched", isCrouched);
         }
+
+        if (isCrouched)
+        {
+            pbCol.height = 0.75f;
+            characterController.height = 0.75f;
+            pbCol.center = new Vector3(0, 0.45f, -0.05f);
+            characterController.center = new Vector3(0, 0.45f, -0.05f);
+        }
+        else
+        {
+            pbCol.height = 1.5f;
+            characterController.height = 1.5f;
+            pbCol.center = new Vector3(0, 0.8f, -0.05f);
+            characterController.center = new Vector3(0, .8f, -0.05f);
+        }
     }
 
     public event LoadCheckpointEvent LoadCheckpoint;
@@ -229,15 +252,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (move) 
-        {
-            //Move();
-        }
-        else
-        {
-
-        };
-
         animator.GetCurrentAnimatorStateInfo(0);
     }
 
@@ -281,8 +295,15 @@ public class PlayerController : MonoBehaviour
 
     public void MoveToCheckPoint(Vector3 position)
     {
+        characterController.enabled = false;
+
         checkpointMove = position;
         Debug.Log("Moving to checkpoint: " + checkpointMove);
+        Transform animModel = transform.Find("SkiPerson_Anim");
+        gameObject.GetComponent<RagdollController>().SetRagdoll(false);
+        transform.Find("SkiPerson_Ragdoll").gameObject.SetActive(false);
+        
+
         movingToCheckPoint = true;
     }
 
@@ -290,14 +311,17 @@ public class PlayerController : MonoBehaviour
     {
         if (movingToCheckPoint)
         {
-            characterController.enabled = false;
+            Transform animModel = transform.Find("SkiPerson_Anim");
+            animModel.gameObject.SetActive(true);
+            animModel.transform.localEulerAngles = Vector3.zero;
+            animModel.transform.localPosition = Vector3.zero;
+
             transform.position = checkpointMove;
             transform.rotation = currentRotation;
             movingToCheckPoint = false;
+
             virtualCamera.enabled = true;
-            
             characterController.enabled = true;
-            //Debug.Log("Actually applied checkpoint move");
         }
         else
         {

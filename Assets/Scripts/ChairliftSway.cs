@@ -19,10 +19,18 @@ public class ChairliftSway : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (sway >= swayAmount) maxSway = -swayAmount;
-        else if (sway <= -swayAmount) maxSway = swayAmount;
+        if (sway >= swayAmount)
+        {
+            maxSway = -swayAmount;
+            Debug.Log("Max Sway set to: "+maxSway);
+        } 
+        else if (sway <= -swayAmount)
+        {
+            maxSway = swayAmount;
+            Debug.Log("Max Sway set to: "+maxSway);
+        } 
 
         sway = Mathf.MoveTowardsAngle(sway, maxSway, swaySpeed);
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, sway*Time.deltaTime);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, sway);
     }
 }
