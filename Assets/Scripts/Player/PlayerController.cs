@@ -152,6 +152,38 @@ public class PlayerController : MonoBehaviour
     {
         OnLoadCheckpoint(13);
     }
+        void OnCheckpoint14 (InputValue value)
+    {
+        OnLoadCheckpoint(14);
+    }
+        void OnCheckpoint15 (InputValue value)
+    {
+        OnLoadCheckpoint(15);
+    }
+        void OnCheckpoint16 (InputValue value)
+    {
+        OnLoadCheckpoint(16);
+    }
+        void OnCheckpoint17 (InputValue value)
+    {
+        OnLoadCheckpoint(17);
+    }
+        void OnCheckpoint18 (InputValue value)
+    {
+        OnLoadCheckpoint(18);
+    }
+        void OnCheckpoint19 (InputValue value)
+    {
+        OnLoadCheckpoint(19);
+    }
+        void OnCheckpoint20 (InputValue value)
+    {
+        OnLoadCheckpoint(20);
+    }
+        void OnCheckpoint21 (InputValue value)
+    {
+        OnLoadCheckpoint(21);
+    }
     //end of bad dev hacks for now
 
     void OnCrouch (InputValue value)

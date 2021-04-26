@@ -13,7 +13,7 @@ public class CheckpointManager : MonoBehaviour
     public string startMusic;
 
     public float progressThroughGame = 0f;
-    private float endOfGame;
+    private float endOfGame = 524000f;
 
     private GameObject player;
     private PlayerController playerController;
@@ -35,7 +35,14 @@ public class CheckpointManager : MonoBehaviour
         {11, new CheckpointData(252008)},
         {12, new CheckpointData(284036)},
         {13, new CheckpointData(316043)},
-        {14, new CheckpointData(351012)}
+        {14, new CheckpointData(351012)},
+        {15, new CheckpointData(375000)},
+        {16, new CheckpointData(396000)},
+        {17, new CheckpointData(407000)},
+        {18, new CheckpointData(428000)},
+        {19, new CheckpointData(460010)},
+        {20, new CheckpointData(481341)},
+        {21, new CheckpointData(502700)}
     };
 
     public int currentCheckpoint = 1;
@@ -51,10 +58,7 @@ public class CheckpointManager : MonoBehaviour
 
     void Start ()
     {
-        endOfGame = checkpoints[checkpoints.Count].timelinePosition;
-        //should change i < to be less than total number of checkpoint
-        //gates actually implemented in game
-        for (int i = 0; i < 13; i++)
+        for (int i = 0; i < 21; i++)
         {
             GameObject checkpointGO = GameObject.Find("Checkpoint" + (i + 1));
             checkpoints[i + 1].position = checkpointGO.transform.Find("RespawnPoint").position;
@@ -179,11 +183,21 @@ public class CheckpointManager : MonoBehaviour
             uiManager.ChangeTrackerMarker(phase);
         }
 
-        if (playerController.speedIndex < 1 && curPosition >= checkpoints[8].timelinePosition)
+        if (
+                (playerController.speedIndex < 1 && 
+                curPosition >= checkpoints[8].timelinePosition) ||
+                (playerController.speedIndex < 2 &&
+                curPosition >= checkpoints[14].timelinePosition)
+            )
         {
             playerController.IncreaseSpeed();
         }
-        else if (playerController.speedIndex > 0 && curPosition <= checkpoints[8].timelinePosition)
+        else if (
+                (playerController.speedIndex > 0 && 
+                curPosition <= checkpoints[8].timelinePosition) ||
+                (playerController.speedIndex > 1 &&
+                curPosition <= checkpoints[14].timelinePosition)
+            )
         {
             playerController.DecreaseSpeed();
         }
