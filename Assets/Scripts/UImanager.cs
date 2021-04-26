@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UImanager : MonoBehaviour
@@ -46,6 +47,7 @@ public class UImanager : MonoBehaviour
 
     void Start ()
     {
+        if (SceneManager.GetActiveScene().name == "MainMenu") return;
         sceneController = GameObject.Find("SceneController")
             .GetComponent<SceneController>();
         gameController = GameObject.Find("GameController")
@@ -143,6 +145,7 @@ public class UImanager : MonoBehaviour
     void Update ()
     {
         test++;
+        if (SceneManager.GetActiveScene().name == "MainMenu") return;
         trackerMarkerGO.GetComponent<RectTransform>()
             .anchoredPosition = new Vector2(
                 Remap(

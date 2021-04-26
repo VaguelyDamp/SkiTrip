@@ -16858,6 +16858,13 @@ MonoBehaviour:
   phase1Marker: {fileID: 0}
   phase2Markers: []
   phase3Markers: []
+  winScreen: {fileID: 0}
+  progressTracker: {fileID: 0}
+  sun: {fileID: 0}
+  sunLight: {fileID: 0}
+  dawn: {x: 0, y: 0}
+  noon: {x: 0, y: 0}
+  dusk: {x: 0, y: 0}
   trackerMarkerGO: {fileID: 0}
   trackerMarker: {fileID: 0}
   trackerMarkerStart: 0
