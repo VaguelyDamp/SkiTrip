@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChairliftSway : MonoBehaviour
 {
     public float swayAmount = 3;
+    private float maxSway;
     public float swaySpeed = .2f;
 
     private float sway = 0;
@@ -12,21 +13,16 @@ public class ChairliftSway : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        maxSway = swayAmount;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (sway >=0)
-        {
-            sway = Mathf.MoveTowardsAngle(sway, -swayAmount, swaySpeed);
-        }
-        else
-        {
-            sway = Mathf.MoveTowardsAngle(sway, swayAmount, swaySpeed);
-        }
+        if (sway >= swayAmount) maxSway = -swayAmount;
+        else if (sway <= -swayAmount) maxSway = swayAmount;
 
+        sway = Mathf.MoveTowardsAngle(sway, maxSway, swaySpeed);
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, sway*Time.deltaTime);
     }
 }
