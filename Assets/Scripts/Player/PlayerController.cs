@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator RagdollCameraCo()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(2f);
         ragdollCamera.enabled = false;
         StartCoroutine(checkpointManager.UnDie());
     }
