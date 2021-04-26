@@ -195,7 +195,7 @@ public class PlayerController : MonoBehaviour
     {
         if (move) 
         {
-            Move();
+            //Move();
         }
         else
         {
@@ -212,13 +212,15 @@ public class PlayerController : MonoBehaviour
             //Debug.Log(transform.rotation.eulerAngles.x);
             if (transform.rotation.eulerAngles.x > 10)
             {
-                transform.Rotate(transform.right, -1f);
+                transform.Rotate(transform.right, -1 * Time.deltaTime);
             }
             else
             {
-                transform.Rotate(transform.right, 1f);
+                transform.Rotate(transform.right, 1 * Time.deltaTime);
             }
         }
+
+        Move();
     }
 
     public void IncreaseSpeed()
