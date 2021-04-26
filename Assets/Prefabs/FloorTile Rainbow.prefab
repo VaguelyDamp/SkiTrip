@@ -23,7 +23,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2186594342086002086}
   m_Layer: 6
-  m_Name: FloorTile
+  m_Name: FloorTile Rainbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: abf4c265b12ca154f93b813553da03ef, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ef2c66903da77e40aa6aaf1fe640fdf, type: 2}
     - target: {fileID: 919132149155446097, guid: abf4c265b12ca154f93b813553da03ef, type: 3}
       propertyPath: m_Name
       value: SM_Floor
