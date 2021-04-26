@@ -16,7 +16,7 @@ public class ChairliftSway : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (sway >=0)
         {
