@@ -14,10 +14,24 @@ public class Collectable : MonoBehaviour
     private Vector3 posOffset = new Vector3();
     private Vector3 tempPos = new Vector3();
 
+    public enum CollectableType 
+    {
+        Queen,
+        Car,
+        Whale,
+        Red,
+        Clippy
+    }
+
+    public CollectableType collectableType;
+    public int phase;
+
     // Start is called before the first frame update
     void Start()
     {
         posOffset = transform.position;
+        Debug.Log("collectableType: " + collectableType);
+        Debug.Log("Collectable type to string: " + collectableType.ToString());
     }
 
     // Update is called once per frame
