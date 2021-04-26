@@ -270,7 +270,7 @@ MonoBehaviour:
   amplitude: 0.5
   frequency: 1
   insidePiece: {fileID: 419352221770419232}
-  collectableType: 0
+  collectableType: 2
   phase: 0
 --- !u!1 &7508196682809522199
 GameObject:
