@@ -7,6 +7,8 @@ public class SkiSFX : MonoBehaviour
     [FMODUnity.EventRef]
     public string turnEvent;
     [FMODUnity.EventRef]
+    public string longTurnEvent;
+    [FMODUnity.EventRef]
     public string idleEvent;
     [FMODUnity.EventRef]
     public string deathEvent;
@@ -19,8 +21,11 @@ public class SkiSFX : MonoBehaviour
 
     private FMOD.Studio.EventInstance idleInstance;
     private FMOD.Studio.EventInstance turnInstance;
+    private FMOD.Studio.EventInstance longTurnInstance;
 
     private PlayerController playerController; 
+
+    private bool longTurning = false;
 
     void Start ()
     {
@@ -53,6 +58,41 @@ public class SkiSFX : MonoBehaviour
                 steerInputValue
             );
             turnInstance.start();
+
+            if (longTurning) StartCoroutine(FadeOutEvent(longTurnInstance, 0.7f));
+            else longTurning = true;
+            longTurnInstance =  FMODUnity.RuntimeManager
+                .CreateInstance(longTurnEvent); 
+            longTurnInstance.setParameterByName(
+                "SteeringInput",
+                steerInputValue
+            );
+            longTurnInstance.start();
+        }
+        else if (longTurning)
+        {
+            longTurning = false;
+            StartCoroutine(FadeOutEvent(longTurnInstance, 0.7f));
+        }
+    }
+
+
+    private IEnumerator FadeOutEvent (FMOD.Studio.EventInstance instance, float fadeOutTime)
+    {
+        float timeElapsed = 0f;
+        while (timeElapsed < fadeOutTime)
+        {
+           instance.setParameterByName(
+                    "FadeOutTurn", 
+                    Remap(
+                        timeElapsed,
+                        0f,
+                        fadeOutTime,
+                        0f,
+                        1f
+                    ));
+            timeElapsed += Time.deltaTime;
+            yield return null;
         }
     }
 
@@ -62,5 +102,19 @@ public class SkiSFX : MonoBehaviour
             .PlayOneShot(deathEvent);
         idleInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         turnInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        longTurnInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    private IEnumerator UnDie ()
+    {
+        
+        yield return new WaitForSeconds(GameObject.Find("CheckpointManager").GetComponent<CheckpointManager>().deathTime);
+        idleInstance.start();
+    }
+
+    public float Remap(float value, float fromStart, float fromEnd, float toStart, float toEnd)
+    {
+        float t = (value - fromStart) / (fromEnd - fromStart);
+        return t * (toEnd - toStart) + toStart;
     }
 }
