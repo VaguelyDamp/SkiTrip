@@ -9,6 +9,23 @@ public class PlayerCollision : MonoBehaviour
 
     public bool ramping = false;
 
+    private bool thisIsOnGround; 
+    public bool isOnGround
+    {
+        get
+        {
+            if (thisIsOnGround)
+            {
+                thisIsOnGround = false;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
     private void Start()
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
@@ -39,6 +56,14 @@ public class PlayerCollision : MonoBehaviour
             //ramping = false;
             Debug.Log("Applying ramp force (trigger)");
             playerController.applyRamp = other.transform.parent.GetComponent<Ramp>().accelTime;
+        }
+    }
+
+    private void OnCollisionStay(Collision col)
+    {
+        if (col.gameObject.layer == 6 || col.transform.tag == "Ramp")
+        {
+            thisIsOnGround = true;
         }
     }
 }

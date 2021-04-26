@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     public bool ccIsGrounded;
     private bool isCrouched;
 
-    public CharacterController characterController;
+    //public CharacterController characterController;
+    public Rigidbody rb;
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
     public GameObject model;
 
@@ -84,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDeath()
     {
-        characterController.enabled = false;
+        //characterController.enabled = false;
         virtualCamera.enabled = false;
 
         transform.Find("SkiPerson_Anim").gameObject.SetActive(false);
@@ -104,7 +105,7 @@ public class PlayerController : MonoBehaviour
     void OnSteer(InputValue value)
     {
         Steer?.Invoke(value.Get<float>());
-        if (characterController.isGrounded) horizantalInput = value.Get<float>();
+        if (ccIsGrounded) horizantalInput = value.Get<float>();
     }
 
     //These are all dev hacks which is why bad code
@@ -206,16 +207,16 @@ public class PlayerController : MonoBehaviour
         if (isCrouched)
         {
             pbCol.height = 0.75f;
-            characterController.height = 0.75f;
+            //characterController.height = 0.75f;
             pbCol.center = new Vector3(0, 0.45f, -0.05f);
-            characterController.center = new Vector3(0, 0.45f, -0.05f);
+            //characterController.center = new Vector3(0, 0.45f, -0.05f);
         }
         else
         {
             pbCol.height = 1.5f;
-            characterController.height = 1.5f;
+            //characterController.height = 1.5f;
             pbCol.center = new Vector3(0, 0.8f, -0.05f);
-            characterController.center = new Vector3(0, .8f, -0.05f);
+            //characterController.center = new Vector3(0, .8f, -0.05f);
         }
     }
 
@@ -257,9 +258,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!characterController.isGrounded)
+        ccIsGrounded = playerCollision.isOnGround;
+
+        if (!ccIsGrounded)
         {
-            airXRot = Mathf.MoveTowardsAngle(transform.eulerAngles.x, 10, 2);
+            airXRot = Mathf.MoveTowardsAngle(transform.eulerAngles.x, currentRotation.eulerAngles.x, 2);
             airYRot = Mathf.MoveTowardsAngle(transform.eulerAngles.y, 0, 2);
             airZRot = Mathf.MoveTowardsAngle(transform.eulerAngles.z, 0, 2);
 
@@ -267,11 +270,11 @@ public class PlayerController : MonoBehaviour
             //Debug.Log(transform.rotation.eulerAngles.x);
             if (transform.rotation.eulerAngles.x > 10)
             {
-                transform.Rotate(transform.right, -1 * Time.deltaTime);
+                transform.Rotate(transform.right, -1 * Time.fixedDeltaTime);
             }
             else
             {
-                transform.Rotate(transform.right, 1 * Time.deltaTime);
+                transform.Rotate(transform.right, 1 * Time.fixedDeltaTime);
             }
         }
 
@@ -295,7 +298,7 @@ public class PlayerController : MonoBehaviour
 
     public void MoveToCheckPoint(Vector3 position)
     {
-        characterController.enabled = false;
+        //characterController.enabled = false;
 
         checkpointMove = position;
         Debug.Log("Moving to checkpoint: " + checkpointMove);
@@ -321,16 +324,16 @@ public class PlayerController : MonoBehaviour
             movingToCheckPoint = false;
 
             virtualCamera.enabled = true;
-            characterController.enabled = true;
+            //characterController.enabled = true;
         }
         else
         {
             yRot = Mathf.MoveTowardsAngle(yRot, horizantalInput * maxRotationAngle, rotateAccel);
             model.transform.eulerAngles = new Vector3(model.transform.eulerAngles.x, yRot, transform.eulerAngles.z);
 
-            ccIsGrounded = characterController.isGrounded;
+            
 
-            if (characterController.isGrounded)
+            if (ccIsGrounded)
             {
                 horiMove = Mathf.MoveTowards(horiMove, horizantalInput, maxAccel);
                 horiAnim = Mathf.MoveTowards(horiAnim, horizantalInput, .1f);
@@ -356,7 +359,7 @@ public class PlayerController : MonoBehaviour
             if (applyRamp > 0)
             {
                 vSpeed = Mathf.MoveTowards(vSpeed, maxRampSpeed, rampSpeedInc);
-                applyRamp -= Time.deltaTime;
+                applyRamp -= Time.fixedDeltaTime;
             }
             else
             {
@@ -364,7 +367,9 @@ public class PlayerController : MonoBehaviour
             }
             moveVec += new Vector3(0, vSpeed, 0);
 
-            characterController.Move(Time.deltaTime * moveVec);
+
+            rb.MovePosition(rb.position + (moveVec)*Time.fixedDeltaTime);
+            //characterController.Move(Time.fixedDeltaTime * moveVec);
         }
     }
 }
