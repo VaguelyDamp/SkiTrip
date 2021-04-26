@@ -346,8 +346,8 @@ MonoBehaviour:
   applyRamp: 0
   rampSpeedInc: 1
   maxRampSpeed: 8
-  gravInc: 0.2
-  maxGrav: -20
+  gravInc: 0.5
+  maxGrav: -19
 --- !u!114 &407398934755064458
 MonoBehaviour:
   m_ObjectHideFlags: 0
