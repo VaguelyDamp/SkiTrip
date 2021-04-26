@@ -213,9 +213,9 @@ public class PlayerController : MonoBehaviour
     {
         if (!characterController.isGrounded)
         {
-            airXRot = Mathf.MoveTowardsAngle(transform.eulerAngles.x, 10, 1);
-            airYRot = Mathf.MoveTowardsAngle(transform.eulerAngles.y, 0, 1);
-            airZRot = Mathf.MoveTowardsAngle(transform.eulerAngles.z, 0, 1);
+            airXRot = Mathf.MoveTowardsAngle(transform.eulerAngles.x, 10, 2);
+            airYRot = Mathf.MoveTowardsAngle(transform.eulerAngles.y, 0, 2);
+            airZRot = Mathf.MoveTowardsAngle(transform.eulerAngles.z, 0, 2);
 
             transform.eulerAngles = new Vector3(airXRot, airYRot, airZRot);
             //Debug.Log(transform.rotation.eulerAngles.x);
