@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 190d2e909e49d0940b39e9074b8c3889
+guid: a737c5c68dbac984594e6d7e6e98bc5a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Ryan_Kingslien_Anatomy_Model
-    second: {fileID: 2100000, guid: c336f382dd550c14da39bc61b6ecf82e, type: 2}
+      name: MushRed
+    second: {fileID: 2100000, guid: 3ae795dce55dfef46a209ea1ac369593, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn35
+    second: {fileID: 2100000, guid: 6369791551b691e44bb82783b38ce484, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

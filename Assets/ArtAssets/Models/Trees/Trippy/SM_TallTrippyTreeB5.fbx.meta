@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 190d2e909e49d0940b39e9074b8c3889
+guid: 2a5131372a659de4d9abe7ec403fbbbc
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ryan_Kingslien_Anatomy_Model
-    second: {fileID: 2100000, guid: c336f382dd550c14da39bc61b6ecf82e, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 190d2e909e49d0940b39e9074b8c3889
+guid: fa80473f451c8f345a15507e45a1147f
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Ryan_Kingslien_Anatomy_Model
-    second: {fileID: 2100000, guid: c336f382dd550c14da39bc61b6ecf82e, type: 2}
+      name: bananaButtMtl
+    second: {fileID: 2100000, guid: 1c55d8999f303ce4391efcca966d9837, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yellowMtl
+    second: {fileID: 2100000, guid: ed4c8f12c3852a947b3c3ede958658f3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
