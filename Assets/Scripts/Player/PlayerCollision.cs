@@ -38,7 +38,7 @@ public class PlayerCollision : MonoBehaviour
         {
             //ramping = false;
             Debug.Log("Applying ramp force (trigger)");
-            playerController.applyRamp = other.GetComponent<Ramp>().accelTime;
+            playerController.applyRamp = other.transform.parent.GetComponent<Ramp>().accelTime;
         }
     }
 }
