@@ -34,7 +34,8 @@ public class CheckpointManager : MonoBehaviour
         {10, new CheckpointData(236003)},
         {11, new CheckpointData(252008)},
         {12, new CheckpointData(284036)},
-        {13, new CheckpointData(316043)}
+        {13, new CheckpointData(316043)},
+        {14, new CheckpointData(348029)}
     };
 
     public int currentCheckpoint = 1;
@@ -176,7 +177,7 @@ public class CheckpointManager : MonoBehaviour
             uiManager.ChangeTrackerMarker(phase);
             Debug.Log("Current Checkpoint: " + currentCheckpoint);
         }
-        
+
         if (playerController.speedIndex < 1 && curPosition >= checkpoints[8].timelinePosition)
         {
             playerController.IncreaseSpeed();
