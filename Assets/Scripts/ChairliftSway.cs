@@ -27,6 +27,6 @@ public class ChairliftSway : MonoBehaviour
             sway = Mathf.MoveTowardsAngle(sway, swayAmount, swaySpeed);
         }
 
-        transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, sway);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, sway*Time.deltaTime);
     }
 }
