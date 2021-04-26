@@ -13,7 +13,7 @@ public class CheckpointManager : MonoBehaviour
     public string startMusic;
 
     public float progressThroughGame = 0f;
-    private float endOfGame = 316043f;
+    private float endOfGame;
 
     private GameObject player;
     private PlayerController playerController;
@@ -35,7 +35,7 @@ public class CheckpointManager : MonoBehaviour
         {11, new CheckpointData(252008)},
         {12, new CheckpointData(284036)},
         {13, new CheckpointData(316043)},
-        {14, new CheckpointData(348029)}
+        {14, new CheckpointData(351012)}
     };
 
     public int currentCheckpoint = 1;
@@ -51,6 +51,7 @@ public class CheckpointManager : MonoBehaviour
 
     void Start ()
     {
+        endOfGame = checkpoints[checkpoints.Count].timelinePosition;
         //should change i < to be less than total number of checkpoint
         //gates actually implemented in game
         for (int i = 0; i < 13; i++)
@@ -170,12 +171,12 @@ public class CheckpointManager : MonoBehaviour
         if (checkpoints.Count >= currentCheckpoint + 1 &&
             curPosition >= checkpoints[currentCheckpoint + 1].timelinePosition)
         {
+            Debug.Log("Current Checkpoint: " + currentCheckpoint);
             checkpoints[currentCheckpoint].vcam.enabled = false;
             currentCheckpoint++;
             checkpoints[currentCheckpoint].vcam.enabled = true;
             uiManager.ChangeCheckpointMarkers(phase);
             uiManager.ChangeTrackerMarker(phase);
-            Debug.Log("Current Checkpoint: " + currentCheckpoint);
         }
 
         if (playerController.speedIndex < 1 && curPosition >= checkpoints[8].timelinePosition)
