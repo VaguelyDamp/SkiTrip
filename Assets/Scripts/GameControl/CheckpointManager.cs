@@ -86,6 +86,12 @@ public class CheckpointManager : MonoBehaviour
     public void LoadCheckpoint (int checkpoint)
     {
         currentCheckpoint = checkpoint;
+        foreach (CheckpointData cpd in checkpoints.Values)
+        {
+            cpd.vcam.enabled = false;
+            Debug.Log(cpd.vcam);
+        }
+        checkpoints[currentCheckpoint].vcam.enabled = true;
         //playerController.move = false;
         if (checkpoint >= phase3Start)
         {
@@ -176,9 +182,9 @@ public class CheckpointManager : MonoBehaviour
             curPosition >= checkpoints[currentCheckpoint + 1].timelinePosition)
         {
             Debug.Log("Current Checkpoint: " + (currentCheckpoint + 1));
-            checkpoints[currentCheckpoint].vcam.enabled = false;
+            //checkpoints[currentCheckpoint].vcam.enabled = false;
             currentCheckpoint++;
-            checkpoints[currentCheckpoint].vcam.enabled = true;
+            //checkpoints[currentCheckpoint].vcam.enabled = true;
             uiManager.ChangeCheckpointMarkers(phase);
             uiManager.ChangeTrackerMarker(phase);
         }
