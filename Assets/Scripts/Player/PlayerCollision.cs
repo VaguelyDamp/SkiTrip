@@ -31,15 +31,6 @@ public class PlayerCollision : MonoBehaviour
             //Debug.Log("Start Ramp");
         }
     }
-    private void OnCollisionExit(Collision col)
-    {
-        if (col.transform.name == "ForceGate")
-        {
-            //ramping = false;
-            Debug.Log("Applying ramp force");
-            playerController.applyRamp = 1;
-        }
-    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -47,7 +38,7 @@ public class PlayerCollision : MonoBehaviour
         {
             //ramping = false;
             Debug.Log("Applying ramp force (trigger)");
-            playerController.applyRamp = 1;
+            playerController.applyRamp = other.GetComponent<Ramp>().accelTime;
         }
     }
 }
