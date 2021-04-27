@@ -16347,7 +16347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3031768142692117587}
   - component: {fileID: 3031768142692117597}
-  - component: {fileID: 3031768142692117586}
+  - component: {fileID: 3031768142692117585}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -16355,7 +16355,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3031768142692117586
+--- !u!114 &3031768142692117585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16364,7 +16364,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3031768142692117584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -16375,20 +16375,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 6db5bfdaef17d654684f9c12b27586c2, type: 3}
-    m_FontSize: 104
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 107
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Ski Trip
+  m_Texture: {fileID: 2800000, guid: 03a8b7e7bc1de154b9ec4a32ccb39a4c, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!224 &3031768142692117587
 RectTransform:
   m_ObjectHideFlags: 0
