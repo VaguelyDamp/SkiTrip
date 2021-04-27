@@ -98,6 +98,7 @@ public class SkiSFX : MonoBehaviour
 
     private void OnDeath ()
     {
+        dead = true;
         FMODUnity.RuntimeManager
             .PlayOneShot(deathEvent);
         idleInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -110,6 +111,7 @@ public class SkiSFX : MonoBehaviour
         
         yield return new WaitForSeconds(GameObject.Find("CheckpointManager").GetComponent<CheckpointManager>().deathTime);
         idleInstance.start();
+        dead = false;
     }
 
     public float Remap(float value, float fromStart, float fromEnd, float toStart, float toEnd)
