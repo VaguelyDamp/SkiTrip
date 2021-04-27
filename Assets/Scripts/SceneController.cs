@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class SceneController: MonoBehaviour
 {
+
+    [FMODUnity.EventRef]
+    public string flourishEvent;
 
     void Start()
     {
@@ -17,6 +21,19 @@ public class SceneController: MonoBehaviour
                 StartCoroutine(LoadSceneAfterDelay(10.5f, "MainMenu"));
                 break;
         }
+    }
+
+    public void MenuFlourish ()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(flourishEvent);
+        GameObject.Find("UI").SetActive(false);
+        StartCoroutine(LoadSceneDelay(6f, "Level1"));
+    }
+
+    private IEnumerator LoadSceneDelay (float delay, string sceneName)
+    {
+        yield return new WaitForSeconds(delay);
+        LoadScene(sceneName);
     }
 
     public void LoadScene (string sceneName)
