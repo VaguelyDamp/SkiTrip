@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{a135be6e-adf4-4cbb-92fd-56a1c6af50b8}">
+		<property name="assetPath">
+			<value>y2mate.com - Nature sounds Meditation forest sounds of birds singing relaxation  4 minutes.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>286.19755102040818</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{978f0eac-9a76-4db4-9a70-e01d1d5c09ea}</destination>
+		</relationship>
+	</object>
+</objects>
