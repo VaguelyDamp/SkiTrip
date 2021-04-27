@@ -406,7 +406,11 @@
 			<destination>{c3cbe61d-6d4b-4d76-b35a-812e3aae2959}</destination>
 		</relationship>
 	</object>
-	<object class="GainEffect" id="{7d083331-b67a-4a19-a759-3c801f391458}" />
+	<object class="GainEffect" id="{7d083331-b67a-4a19-a759-3c801f391458}">
+		<property name="gain">
+			<value>4</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{6e3e2d23-b28f-41fb-82bb-d27611a98179}" />
 	<object class="ThreeEQEffect" id="{21a36b73-22fd-453e-bd16-ae3a18c72141}">
 		<property name="lowGain">

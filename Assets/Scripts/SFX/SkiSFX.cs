@@ -96,6 +96,16 @@ public class SkiSFX : MonoBehaviour
         }
     }
 
+    void Update ()
+    {
+        int groundedFloat = 1;
+        if (!playerController.ccIsGrounded) groundedFloat = 0;
+        Debug.Log(playerController.ccIsGrounded);
+        FMODUnity.RuntimeManager
+            .StudioSystem.setParameterByName(
+                "Grounded", groundedFloat);
+    }
+
     private void OnDeath ()
     {
         dead = true;
@@ -104,6 +114,7 @@ public class SkiSFX : MonoBehaviour
         idleInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         turnInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         longTurnInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        StartCoroutine(UnDie());
     }
 
     private IEnumerator UnDie ()
