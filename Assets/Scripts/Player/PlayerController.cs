@@ -263,9 +263,12 @@ public class PlayerController : MonoBehaviour
     public event LoadCheckpointEvent LoadCheckpoint;
     public void OnLoadCheckpoint (int checkpoint)
     {
-        Resume();
-        LoadCheckpoint?.Invoke(checkpoint);
-        checkpointManager.SwitchCameras(checkpointManager.currentCheckpoint);
+        if (Application.isEditor)
+        {
+            Resume();
+            LoadCheckpoint?.Invoke(checkpoint);
+            checkpointManager.SwitchCameras(checkpointManager.currentCheckpoint);
+        }
     }
 
     public event PauseEvent PauseToggle;
