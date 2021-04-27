@@ -68,8 +68,8 @@ public class UImanager : MonoBehaviour
 
     private void OnDeath ()
     {
-        deathText.SetActive(true);
-        StartCoroutine(HideDeathText());
+        //deathText.SetActive(true);
+        //StartCoroutine(HideDeathText());
     }
 
     private IEnumerator HideDeathText ()
