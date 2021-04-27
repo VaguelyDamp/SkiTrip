@@ -65,6 +65,8 @@ public class PlayerCollision : MonoBehaviour
             Collectable.CollectableType ctype = collect.collectableType;
             Debug.Log("Collectable found: " + ctype);
             PlayerPrefs.SetFloat(collect.collectableType.ToString()+collect.phase, 1);
+
+            Destroy(col.transform.parent);
         }
     }
 }
