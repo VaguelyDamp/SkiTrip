@@ -47,7 +47,6 @@ public class UImanager : MonoBehaviour
 
     void Start ()
     {
-        PlayerPrefs.SetFloat("Queen1", 1);
         if (SceneManager.GetActiveScene().name == "MainMenu") return;
         sceneController = GameObject.Find("SceneController")
             .GetComponent<SceneController>();
@@ -93,6 +92,7 @@ public class UImanager : MonoBehaviour
                 confirmationButton.onClick.AddListener(GoToMenu);
                 break;
             case "quit to desktop":
+                Debug.Log("Ballz");
                 confirmationButton.onClick.AddListener(QuitToDesktop);
                 break;
             default:
@@ -217,7 +217,7 @@ public class UImanager : MonoBehaviour
         sceneController.LoadScene("MainMenu");
     }
 
-    private void QuitToDesktop ()
+    public void QuitToDesktop ()
     {
         sceneController.QuitToDesktop();
     }
